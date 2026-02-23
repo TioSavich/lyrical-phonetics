@@ -1,0 +1,3105 @@
+{
+  "alliteration": [
+    {
+      "id": "allit_b",
+      "name": "Plosive B",
+      "words": [
+        {
+          "lineIndex": 1,
+          "wordIndex": 7
+        },
+        {
+          "lineIndex": 2,
+          "wordIndex": 13
+        },
+        {
+          "lineIndex": 14,
+          "wordIndex": 65
+        },
+        {
+          "lineIndex": 16,
+          "wordIndex": 76
+        },
+        {
+          "lineIndex": 16,
+          "wordIndex": 77
+        },
+        {
+          "lineIndex": 18,
+          "wordIndex": 90
+        },
+        {
+          "lineIndex": 19,
+          "wordIndex": 98
+        },
+        {
+          "lineIndex": 23,
+          "wordIndex": 120
+        },
+        {
+          "lineIndex": 28,
+          "wordIndex": 157
+        },
+        {
+          "lineIndex": 28,
+          "wordIndex": 162
+        },
+        {
+          "lineIndex": 30,
+          "wordIndex": 169
+        },
+        {
+          "lineIndex": 33,
+          "wordIndex": 193
+        },
+        {
+          "lineIndex": 34,
+          "wordIndex": 196
+        },
+        {
+          "lineIndex": 34,
+          "wordIndex": 199
+        }
+      ]
+    },
+    {
+      "id": "allit_s",
+      "name": "Sibilant S",
+      "words": [
+        {
+          "lineIndex": 2,
+          "wordIndex": 16
+        },
+        {
+          "lineIndex": 3,
+          "wordIndex": 18
+        },
+        {
+          "lineIndex": 5,
+          "wordIndex": 26
+        },
+        {
+          "lineIndex": 6,
+          "wordIndex": 29
+        },
+        {
+          "lineIndex": 7,
+          "wordIndex": 32
+        },
+        {
+          "lineIndex": 12,
+          "wordIndex": 50
+        },
+        {
+          "lineIndex": 12,
+          "wordIndex": 53
+        },
+        {
+          "lineIndex": 15,
+          "wordIndex": 68
+        },
+        {
+          "lineIndex": 17,
+          "wordIndex": 80
+        },
+        {
+          "lineIndex": 17,
+          "wordIndex": 86
+        },
+        {
+          "lineIndex": 17,
+          "wordIndex": 87
+        },
+        {
+          "lineIndex": 20,
+          "wordIndex": 100
+        },
+        {
+          "lineIndex": 22,
+          "wordIndex": 113
+        },
+        {
+          "lineIndex": 22,
+          "wordIndex": 118
+        },
+        {
+          "lineIndex": 25,
+          "wordIndex": 137
+        },
+        {
+          "lineIndex": 26,
+          "wordIndex": 140
+        },
+        {
+          "lineIndex": 28,
+          "wordIndex": 159
+        },
+        {
+          "lineIndex": 31,
+          "wordIndex": 174
+        },
+        {
+          "lineIndex": 31,
+          "wordIndex": 178
+        },
+        {
+          "lineIndex": 35,
+          "wordIndex": 200
+        },
+        {
+          "lineIndex": 39,
+          "wordIndex": 219
+        },
+        {
+          "lineIndex": 39,
+          "wordIndex": 225
+        },
+        {
+          "lineIndex": 40,
+          "wordIndex": 226
+        }
+      ]
+    },
+    {
+      "id": "allit_w",
+      "name": "Glide W",
+      "words": [
+        {
+          "lineIndex": 2,
+          "wordIndex": 12
+        },
+        {
+          "lineIndex": 6,
+          "wordIndex": 28
+        },
+        {
+          "lineIndex": 14,
+          "wordIndex": 63
+        },
+        {
+          "lineIndex": 16,
+          "wordIndex": 79
+        },
+        {
+          "lineIndex": 19,
+          "wordIndex": 94
+        },
+        {
+          "lineIndex": 19,
+          "wordIndex": 95
+        },
+        {
+          "lineIndex": 21,
+          "wordIndex": 109
+        },
+        {
+          "lineIndex": 21,
+          "wordIndex": 111
+        },
+        {
+          "lineIndex": 23,
+          "wordIndex": 122
+        },
+        {
+          "lineIndex": 24,
+          "wordIndex": 127
+        },
+        {
+          "lineIndex": 24,
+          "wordIndex": 130
+        },
+        {
+          "lineIndex": 24,
+          "wordIndex": 132
+        },
+        {
+          "lineIndex": 32,
+          "wordIndex": 186
+        },
+        {
+          "lineIndex": 36,
+          "wordIndex": 205
+        },
+        {
+          "lineIndex": 40,
+          "wordIndex": 227
+        },
+        {
+          "lineIndex": 42,
+          "wordIndex": 239
+        }
+      ]
+    },
+    {
+      "id": "allit_m",
+      "name": "Nasal M",
+      "words": [
+        {
+          "lineIndex": 0,
+          "wordIndex": 2
+        },
+        {
+          "lineIndex": 2,
+          "wordIndex": 11
+        },
+        {
+          "lineIndex": 6,
+          "wordIndex": 30
+        },
+        {
+          "lineIndex": 7,
+          "wordIndex": 34
+        },
+        {
+          "lineIndex": 10,
+          "wordIndex": 42
+        },
+        {
+          "lineIndex": 11,
+          "wordIndex": 46
+        },
+        {
+          "lineIndex": 12,
+          "wordIndex": 52
+        },
+        {
+          "lineIndex": 14,
+          "wordIndex": 61
+        },
+        {
+          "lineIndex": 15,
+          "wordIndex": 67
+        },
+        {
+          "lineIndex": 15,
+          "wordIndex": 70
+        },
+        {
+          "lineIndex": 16,
+          "wordIndex": 78
+        },
+        {
+          "lineIndex": 19,
+          "wordIndex": 97
+        },
+        {
+          "lineIndex": 21,
+          "wordIndex": 108
+        },
+        {
+          "lineIndex": 23,
+          "wordIndex": 124
+        },
+        {
+          "lineIndex": 29,
+          "wordIndex": 163
+        },
+        {
+          "lineIndex": 30,
+          "wordIndex": 166
+        },
+        {
+          "lineIndex": 36,
+          "wordIndex": 208
+        },
+        {
+          "lineIndex": 38,
+          "wordIndex": 217
+        },
+        {
+          "lineIndex": 40,
+          "wordIndex": 229
+        }
+      ]
+    },
+    {
+      "id": "allit_l",
+      "name": "Liquid L",
+      "words": [
+        {
+          "lineIndex": 1,
+          "wordIndex": 4
+        },
+        {
+          "lineIndex": 13,
+          "wordIndex": 59
+        },
+        {
+          "lineIndex": 18,
+          "wordIndex": 92
+        },
+        {
+          "lineIndex": 18,
+          "wordIndex": 93
+        },
+        {
+          "lineIndex": 19,
+          "wordIndex": 96
+        },
+        {
+          "lineIndex": 26,
+          "wordIndex": 144
+        },
+        {
+          "lineIndex": 27,
+          "wordIndex": 151
+        },
+        {
+          "lineIndex": 27,
+          "wordIndex": 156
+        },
+        {
+          "lineIndex": 32,
+          "wordIndex": 180
+        },
+        {
+          "lineIndex": 36,
+          "wordIndex": 210
+        },
+        {
+          "lineIndex": 40,
+          "wordIndex": 230
+        }
+      ]
+    },
+    {
+      "id": "allit_t",
+      "name": "Plosive T",
+      "words": [
+        {
+          "lineIndex": 2,
+          "wordIndex": 8
+        },
+        {
+          "lineIndex": 2,
+          "wordIndex": 9
+        },
+        {
+          "lineIndex": 2,
+          "wordIndex": 14
+        },
+        {
+          "lineIndex": 11,
+          "wordIndex": 47
+        },
+        {
+          "lineIndex": 22,
+          "wordIndex": 114
+        },
+        {
+          "lineIndex": 22,
+          "wordIndex": 116
+        },
+        {
+          "lineIndex": 27,
+          "wordIndex": 153
+        },
+        {
+          "lineIndex": 30,
+          "wordIndex": 165
+        },
+        {
+          "lineIndex": 31,
+          "wordIndex": 175
+        },
+        {
+          "lineIndex": 32,
+          "wordIndex": 182
+        },
+        {
+          "lineIndex": 32,
+          "wordIndex": 184
+        },
+        {
+          "lineIndex": 35,
+          "wordIndex": 203
+        },
+        {
+          "lineIndex": 43,
+          "wordIndex": 243
+        },
+        {
+          "lineIndex": 43,
+          "wordIndex": 245
+        }
+      ]
+    }
+  ],
+  "assonance": [
+    {
+      "id": "ass_i",
+      "name": "High Front Vowel /i/",
+      "words": [
+        {
+          "lineIndex": 0,
+          "wordIndex": 3
+        },
+        {
+          "lineIndex": 1,
+          "wordIndex": 7
+        },
+        {
+          "lineIndex": 3,
+          "wordIndex": 18
+        },
+        {
+          "lineIndex": 4,
+          "wordIndex": 21
+        },
+        {
+          "lineIndex": 10,
+          "wordIndex": 43
+        },
+        {
+          "lineIndex": 11,
+          "wordIndex": 47
+        },
+        {
+          "lineIndex": 14,
+          "wordIndex": 60
+        },
+        {
+          "lineIndex": 19,
+          "wordIndex": 98
+        },
+        {
+          "lineIndex": 20,
+          "wordIndex": 100
+        },
+        {
+          "lineIndex": 20,
+          "wordIndex": 103
+        },
+        {
+          "lineIndex": 21,
+          "wordIndex": 105
+        },
+        {
+          "lineIndex": 22,
+          "wordIndex": 118
+        },
+        {
+          "lineIndex": 24,
+          "wordIndex": 132
+        },
+        {
+          "lineIndex": 25,
+          "wordIndex": 135
+        },
+        {
+          "lineIndex": 25,
+          "wordIndex": 138
+        },
+        {
+          "lineIndex": 26,
+          "wordIndex": 147
+        },
+        {
+          "lineIndex": 27,
+          "wordIndex": 149
+        },
+        {
+          "lineIndex": 27,
+          "wordIndex": 153
+        },
+        {
+          "lineIndex": 27,
+          "wordIndex": 154
+        },
+        {
+          "lineIndex": 27,
+          "wordIndex": 156
+        },
+        {
+          "lineIndex": 28,
+          "wordIndex": 160
+        },
+        {
+          "lineIndex": 28,
+          "wordIndex": 162
+        },
+        {
+          "lineIndex": 30,
+          "wordIndex": 170
+        },
+        {
+          "lineIndex": 31,
+          "wordIndex": 178
+        }
+      ]
+    },
+    {
+      "id": "ass_ai",
+      "name": "Diphthong /aɪ/",
+      "words": [
+        {
+          "lineIndex": 2,
+          "wordIndex": 8
+        },
+        {
+          "lineIndex": 2,
+          "wordIndex": 10
+        },
+        {
+          "lineIndex": 2,
+          "wordIndex": 11
+        },
+        {
+          "lineIndex": 2,
+          "wordIndex": 16
+        },
+        {
+          "lineIndex": 5,
+          "wordIndex": 26
+        },
+        {
+          "lineIndex": 6,
+          "wordIndex": 27
+        },
+        {
+          "lineIndex": 7,
+          "wordIndex": 34
+        },
+        {
+          "lineIndex": 7,
+          "wordIndex": 36
+        },
+        {
+          "lineIndex": 8,
+          "wordIndex": 37
+        },
+        {
+          "lineIndex": 8,
+          "wordIndex": 38
+        },
+        {
+          "lineIndex": 9,
+          "wordIndex": 39
+        },
+        {
+          "lineIndex": 10,
+          "wordIndex": 42
+        },
+        {
+          "lineIndex": 11,
+          "wordIndex": 46
+        },
+        {
+          "lineIndex": 12,
+          "wordIndex": 52
+        },
+        {
+          "lineIndex": 12,
+          "wordIndex": 53
+        },
+        {
+          "lineIndex": 13,
+          "wordIndex": 59
+        },
+        {
+          "lineIndex": 14,
+          "wordIndex": 61
+        },
+        {
+          "lineIndex": 15,
+          "wordIndex": 67
+        },
+        {
+          "lineIndex": 15,
+          "wordIndex": 68
+        },
+        {
+          "lineIndex": 16,
+          "wordIndex": 71
+        },
+        {
+          "lineIndex": 16,
+          "wordIndex": 72
+        },
+        {
+          "lineIndex": 16,
+          "wordIndex": 78
+        },
+        {
+          "lineIndex": 17,
+          "wordIndex": 81
+        },
+        {
+          "lineIndex": 17,
+          "wordIndex": 84
+        },
+        {
+          "lineIndex": 18,
+          "wordIndex": 90
+        },
+        {
+          "lineIndex": 21,
+          "wordIndex": 111
+        },
+        {
+          "lineIndex": 23,
+          "wordIndex": 124
+        },
+        {
+          "lineIndex": 23,
+          "wordIndex": 125
+        },
+        {
+          "lineIndex": 24,
+          "wordIndex": 131
+        },
+        {
+          "lineIndex": 25,
+          "wordIndex": 133
+        },
+        {
+          "lineIndex": 26,
+          "wordIndex": 145
+        },
+        {
+          "lineIndex": 27,
+          "wordIndex": 151
+        },
+        {
+          "lineIndex": 28,
+          "wordIndex": 158
+        },
+        {
+          "lineIndex": 32,
+          "wordIndex": 179
+        },
+        {
+          "lineIndex": 36,
+          "wordIndex": 204
+        },
+        {
+          "lineIndex": 37,
+          "wordIndex": 212
+        },
+        {
+          "lineIndex": 39,
+          "wordIndex": 225
+        },
+        {
+          "lineIndex": 40,
+          "wordIndex": 230
+        },
+        {
+          "lineIndex": 41,
+          "wordIndex": 231
+        },
+        {
+          "lineIndex": 41,
+          "wordIndex": 234
+        },
+        {
+          "lineIndex": 42,
+          "wordIndex": 235
+        },
+        {
+          "lineIndex": 42,
+          "wordIndex": 238
+        },
+        {
+          "lineIndex": 43,
+          "wordIndex": 241
+        },
+        {
+          "lineIndex": 43,
+          "wordIndex": 244
+        },
+        {
+          "lineIndex": 44,
+          "wordIndex": 247
+        },
+        {
+          "lineIndex": 44,
+          "wordIndex": 249
+        }
+      ]
+    },
+    {
+      "id": "ass_u",
+      "name": "High Back Vowel /u/",
+      "words": [
+        {
+          "lineIndex": 13,
+          "wordIndex": 54
+        },
+        {
+          "lineIndex": 14,
+          "wordIndex": 60
+        },
+        {
+          "lineIndex": 29,
+          "wordIndex": 163
+        },
+        {
+          "lineIndex": 29,
+          "wordIndex": 164
+        },
+        {
+          "lineIndex": 32,
+          "wordIndex": 186
+        },
+        {
+          "lineIndex": 33,
+          "wordIndex": 193
+        },
+        {
+          "lineIndex": 35,
+          "wordIndex": 203
+        },
+        {
+          "lineIndex": 37,
+          "wordIndex": 216
+        },
+        {
+          "lineIndex": 38,
+          "wordIndex": 217
+        },
+        {
+          "lineIndex": 38,
+          "wordIndex": 218
+        }
+      ]
+    },
+    {
+      "id": "ass_short_i",
+      "name": "Short /ɪ/",
+      "words": [
+        {
+          "lineIndex": 0,
+          "wordIndex": 1
+        },
+        {
+          "lineIndex": 6,
+          "wordIndex": 28
+        },
+        {
+          "lineIndex": 7,
+          "wordIndex": 32
+        },
+        {
+          "lineIndex": 7,
+          "wordIndex": 33
+        },
+        {
+          "lineIndex": 9,
+          "wordIndex": 39
+        },
+        {
+          "lineIndex": 11,
+          "wordIndex": 45
+        },
+        {
+          "lineIndex": 12,
+          "wordIndex": 48
+        },
+        {
+          "lineIndex": 12,
+          "wordIndex": 49
+        },
+        {
+          "lineIndex": 12,
+          "wordIndex": 50
+        },
+        {
+          "lineIndex": 12,
+          "wordIndex": 51
+        },
+        {
+          "lineIndex": 14,
+          "wordIndex": 65
+        },
+        {
+          "lineIndex": 15,
+          "wordIndex": 66
+        },
+        {
+          "lineIndex": 16,
+          "wordIndex": 79
+        },
+        {
+          "lineIndex": 17,
+          "wordIndex": 86
+        },
+        {
+          "lineIndex": 17,
+          "wordIndex": 87
+        },
+        {
+          "lineIndex": 19,
+          "wordIndex": 94
+        },
+        {
+          "lineIndex": 21,
+          "wordIndex": 104
+        },
+        {
+          "lineIndex": 21,
+          "wordIndex": 106
+        },
+        {
+          "lineIndex": 21,
+          "wordIndex": 109
+        },
+        {
+          "lineIndex": 24,
+          "wordIndex": 127
+        },
+        {
+          "lineIndex": 26,
+          "wordIndex": 140
+        },
+        {
+          "lineIndex": 26,
+          "wordIndex": 144
+        },
+        {
+          "lineIndex": 32,
+          "wordIndex": 180
+        },
+        {
+          "lineIndex": 33,
+          "wordIndex": 188
+        },
+        {
+          "lineIndex": 34,
+          "wordIndex": 195
+        },
+        {
+          "lineIndex": 34,
+          "wordIndex": 196
+        },
+        {
+          "lineIndex": 40,
+          "wordIndex": 226
+        },
+        {
+          "lineIndex": 40,
+          "wordIndex": 227
+        },
+        {
+          "lineIndex": 42,
+          "wordIndex": 239
+        },
+        {
+          "lineIndex": 43,
+          "wordIndex": 240
+        },
+        {
+          "lineIndex": 43,
+          "wordIndex": 243
+        },
+        {
+          "lineIndex": 44,
+          "wordIndex": 246
+        }
+      ]
+    },
+    {
+      "id": "ass_short_u",
+      "name": "Short /ʌ/ and Schwa",
+      "words": [
+        {
+          "lineIndex": 1,
+          "wordIndex": 4
+        },
+        {
+          "lineIndex": 18,
+          "wordIndex": 93
+        },
+        {
+          "lineIndex": 22,
+          "wordIndex": 114
+        },
+        {
+          "lineIndex": 22,
+          "wordIndex": 116
+        },
+        {
+          "lineIndex": 23,
+          "wordIndex": 120
+        },
+        {
+          "lineIndex": 31,
+          "wordIndex": 174
+        },
+        {
+          "lineIndex": 32,
+          "wordIndex": 184
+        },
+        {
+          "lineIndex": 34,
+          "wordIndex": 199
+        },
+        {
+          "lineIndex": 36,
+          "wordIndex": 208
+        },
+        {
+          "lineIndex": 36,
+          "wordIndex": 210
+        },
+        {
+          "lineIndex": 37,
+          "wordIndex": 214
+        }
+      ]
+    }
+  ],
+  "cascades": [
+    {
+      "id": "casc_moon_goose",
+      "name": "Vowel Sustain /u/",
+      "words": [
+        {
+          "lineIndex": 29,
+          "wordIndex": 163
+        },
+        {
+          "lineIndex": 29,
+          "wordIndex": 164
+        }
+      ]
+    },
+    {
+      "id": "casc_drip_drop",
+      "name": "Ablaut Reduplication",
+      "words": [
+        {
+          "lineIndex": 43,
+          "wordIndex": 240
+        },
+        {
+          "lineIndex": 43,
+          "wordIndex": 242
+        },
+        {
+          "lineIndex": 43,
+          "wordIndex": 243
+        },
+        {
+          "lineIndex": 43,
+          "wordIndex": 245
+        }
+      ]
+    },
+    {
+      "id": "casc_water_weep",
+      "name": "W-Glide Morph",
+      "words": [
+        {
+          "lineIndex": 24,
+          "wordIndex": 127
+        },
+        {
+          "lineIndex": 24,
+          "wordIndex": 130
+        },
+        {
+          "lineIndex": 24,
+          "wordIndex": 132
+        }
+      ]
+    },
+    {
+      "id": "casc_static_spine",
+      "name": "S-Cluster Evolution",
+      "words": [
+        {
+          "lineIndex": 12,
+          "wordIndex": 50
+        },
+        {
+          "lineIndex": 12,
+          "wordIndex": 53
+        },
+        {
+          "lineIndex": 15,
+          "wordIndex": 68
+        }
+      ]
+    }
+  ],
+  "lines": [
+    {
+      "id": 0,
+      "syllables": 4,
+      "text": "Heart in my knees",
+      "words": [
+        {
+          "clean": "Heart",
+          "index": 0,
+          "ipa": "hɑrt",
+          "text": "Heart"
+        },
+        {
+          "clean": "in",
+          "index": 1,
+          "ipa": "ɪn",
+          "text": "in"
+        },
+        {
+          "clean": "my",
+          "index": 2,
+          "ipa": "maɪ",
+          "text": "my"
+        },
+        {
+          "clean": "knees",
+          "index": 3,
+          "ipa": "niz",
+          "text": "knees"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "syllables": 4,
+      "text": "Lungs full of bees",
+      "words": [
+        {
+          "clean": "Lungs",
+          "index": 4,
+          "ipa": "lʌŋz",
+          "text": "Lungs"
+        },
+        {
+          "clean": "full",
+          "index": 5,
+          "ipa": "fʊl",
+          "text": "full"
+        },
+        {
+          "clean": "of",
+          "index": 6,
+          "ipa": "ʌv",
+          "text": "of"
+        },
+        {
+          "clean": "bees",
+          "index": 7,
+          "ipa": "biz",
+          "text": "bees"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "syllables": 9,
+      "text": "Trying to find my way back to the shine",
+      "words": [
+        {
+          "clean": "Trying",
+          "index": 8,
+          "ipa": "traɪɪŋ",
+          "text": "Trying"
+        },
+        {
+          "clean": "to",
+          "index": 9,
+          "ipa": "tu",
+          "text": "to"
+        },
+        {
+          "clean": "find",
+          "index": 10,
+          "ipa": "faɪnd",
+          "text": "find"
+        },
+        {
+          "clean": "my",
+          "index": 11,
+          "ipa": "maɪ",
+          "text": "my"
+        },
+        {
+          "clean": "way",
+          "index": 12,
+          "ipa": "weɪ",
+          "text": "way"
+        },
+        {
+          "clean": "back",
+          "index": 13,
+          "ipa": "bæk",
+          "text": "back"
+        },
+        {
+          "clean": "to",
+          "index": 14,
+          "ipa": "tu",
+          "text": "to"
+        },
+        {
+          "clean": "the",
+          "index": 15,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "shine",
+          "index": 16,
+          "ipa": "ʃaɪn",
+          "text": "shine"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "syllables": 2,
+      "text": "All squeeze",
+      "words": [
+        {
+          "clean": "All",
+          "index": 17,
+          "ipa": "ɔl",
+          "text": "All"
+        },
+        {
+          "clean": "squeeze",
+          "index": 18,
+          "ipa": "skwiz",
+          "text": "squeeze"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "syllables": 4,
+      "text": "And no release",
+      "words": [
+        {
+          "clean": "And",
+          "index": 19,
+          "ipa": "ænd",
+          "text": "And"
+        },
+        {
+          "clean": "no",
+          "index": 20,
+          "ipa": "noʊ",
+          "text": "no"
+        },
+        {
+          "clean": "release",
+          "index": 21,
+          "ipa": "rɪˈlis",
+          "text": "release"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "syllables": 7,
+      "text": "Falling through a velvet sky",
+      "words": [
+        {
+          "clean": "Falling",
+          "index": 22,
+          "ipa": "fɔlɪŋ",
+          "text": "Falling"
+        },
+        {
+          "clean": "through",
+          "index": 23,
+          "ipa": "θru",
+          "text": "through"
+        },
+        {
+          "clean": "a",
+          "index": 24,
+          "ipa": "ə",
+          "text": "a"
+        },
+        {
+          "clean": "velvet",
+          "index": 25,
+          "ipa": "ˈvɛlvət",
+          "text": "velvet"
+        },
+        {
+          "clean": "sky",
+          "index": 26,
+          "ipa": "skaɪ",
+          "text": "sky"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "syllables": 5,
+      "text": "(Night wind swallow me whole)",
+      "words": [
+        {
+          "clean": "Night",
+          "index": 27,
+          "ipa": "naɪt",
+          "text": "(Night"
+        },
+        {
+          "clean": "wind",
+          "index": 28,
+          "ipa": "wɪnd",
+          "text": "wind"
+        },
+        {
+          "clean": "swallow",
+          "index": 29,
+          "ipa": "ˈswɑloʊ",
+          "text": "swallow"
+        },
+        {
+          "clean": "me",
+          "index": 30,
+          "ipa": "mi",
+          "text": "me"
+        },
+        {
+          "clean": "whole",
+          "index": 31,
+          "ipa": "hoʊl",
+          "text": "whole)"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "syllables": 6,
+      "text": "Static in my open eyes",
+      "words": [
+        {
+          "clean": "Static",
+          "index": 32,
+          "ipa": "stætɪk",
+          "text": "Static"
+        },
+        {
+          "clean": "in",
+          "index": 33,
+          "ipa": "ɪn",
+          "text": "in"
+        },
+        {
+          "clean": "my",
+          "index": 34,
+          "ipa": "maɪ",
+          "text": "my"
+        },
+        {
+          "clean": "open",
+          "index": 35,
+          "ipa": "ˈoʊpən",
+          "text": "open"
+        },
+        {
+          "clean": "eyes",
+          "index": 36,
+          "ipa": "aɪz",
+          "text": "eyes"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "syllables": 2,
+      "text": "I’m fried",
+      "words": [
+        {
+          "clean": "I’m",
+          "index": 37,
+          "ipa": "aɪm",
+          "text": "I’m"
+        },
+        {
+          "clean": "fried",
+          "index": 38,
+          "ipa": "fraɪd",
+          "text": "fried"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "syllables": 2,
+      "text": "(Inside)",
+      "words": [
+        {
+          "clean": "Inside",
+          "index": 39,
+          "ipa": "ɪnˈsaɪd",
+          "text": "(Inside)"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "syllables": 5,
+      "text": "Choking on my peace",
+      "words": [
+        {
+          "clean": "Choking",
+          "index": 40,
+          "ipa": "ʧoʊkɪŋ",
+          "text": "Choking"
+        },
+        {
+          "clean": "on",
+          "index": 41,
+          "ipa": "ɑn",
+          "text": "on"
+        },
+        {
+          "clean": "my",
+          "index": 42,
+          "ipa": "maɪ",
+          "text": "my"
+        },
+        {
+          "clean": "peace",
+          "index": 43,
+          "ipa": "pis",
+          "text": "peace"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "syllables": 4,
+      "text": "Glass in my teeth",
+      "words": [
+        {
+          "clean": "Glass",
+          "index": 44,
+          "ipa": "glæs",
+          "text": "Glass"
+        },
+        {
+          "clean": "in",
+          "index": 45,
+          "ipa": "ɪn",
+          "text": "in"
+        },
+        {
+          "clean": "my",
+          "index": 46,
+          "ipa": "maɪ",
+          "text": "my"
+        },
+        {
+          "clean": "teeth",
+          "index": 47,
+          "ipa": "tiθ",
+          "text": "teeth"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "syllables": 7,
+      "text": "Is it static in my spine?",
+      "words": [
+        {
+          "clean": "Is",
+          "index": 48,
+          "ipa": "ɪz",
+          "text": "Is"
+        },
+        {
+          "clean": "it",
+          "index": 49,
+          "ipa": "ɪt",
+          "text": "it"
+        },
+        {
+          "clean": "static",
+          "index": 50,
+          "ipa": "ˈstætɪk",
+          "text": "static"
+        },
+        {
+          "clean": "in",
+          "index": 51,
+          "ipa": "ɪn",
+          "text": "in"
+        },
+        {
+          "clean": "my",
+          "index": 52,
+          "ipa": "maɪ",
+          "text": "my"
+        },
+        {
+          "clean": "spine",
+          "index": 53,
+          "ipa": "spaɪn",
+          "text": "spine?"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "syllables": 7,
+      "text": "Goose cooked on the power lines",
+      "words": [
+        {
+          "clean": "Goose",
+          "index": 54,
+          "ipa": "gus",
+          "text": "Goose"
+        },
+        {
+          "clean": "cooked",
+          "index": 55,
+          "ipa": "kʊkt",
+          "text": "cooked"
+        },
+        {
+          "clean": "on",
+          "index": 56,
+          "ipa": "ɑn",
+          "text": "on"
+        },
+        {
+          "clean": "the",
+          "index": 57,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "power",
+          "index": 58,
+          "ipa": "ˈpaʊər",
+          "text": "power"
+        },
+        {
+          "clean": "lines",
+          "index": 59,
+          "ipa": "laɪnz",
+          "text": "lines"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "syllables": 7,
+      "text": "Julie my friend where ya been",
+      "words": [
+        {
+          "clean": "Julie",
+          "index": 60,
+          "ipa": "ʤuli",
+          "text": "Julie"
+        },
+        {
+          "clean": "my",
+          "index": 61,
+          "ipa": "maɪ",
+          "text": "my"
+        },
+        {
+          "clean": "friend",
+          "index": 62,
+          "ipa": "frɛnd",
+          "text": "friend"
+        },
+        {
+          "clean": "where",
+          "index": 63,
+          "ipa": "wɛr",
+          "text": "where"
+        },
+        {
+          "clean": "ya",
+          "index": 64,
+          "ipa": "jə",
+          "text": "ya"
+        },
+        {
+          "clean": "been",
+          "index": 65,
+          "ipa": "bɪn",
+          "text": "been"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "syllables": 8,
+      "text": "Cracking my spine for medicine",
+      "words": [
+        {
+          "clean": "Cracking",
+          "index": 66,
+          "ipa": "krækɪŋ",
+          "text": "Cracking"
+        },
+        {
+          "clean": "my",
+          "index": 67,
+          "ipa": "maɪ",
+          "text": "my"
+        },
+        {
+          "clean": "spine",
+          "index": 68,
+          "ipa": "spaɪn",
+          "text": "spine"
+        },
+        {
+          "clean": "for",
+          "index": 69,
+          "ipa": "fɔr",
+          "text": "for"
+        },
+        {
+          "clean": "medicine",
+          "index": 70,
+          "ipa": "ˈmɛdəsən",
+          "text": "medicine"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "syllables": 11,
+      "text": "I'd fly away, but the bastard broke my wing",
+      "words": [
+        {
+          "clean": "I'd",
+          "index": 71,
+          "ipa": "aɪd",
+          "text": "I'd"
+        },
+        {
+          "clean": "fly",
+          "index": 72,
+          "ipa": "flaɪ",
+          "text": "fly"
+        },
+        {
+          "clean": "away",
+          "index": 73,
+          "ipa": "əˈweɪ",
+          "text": "away,"
+        },
+        {
+          "clean": "but",
+          "index": 74,
+          "ipa": "bʌt",
+          "text": "but"
+        },
+        {
+          "clean": "the",
+          "index": 75,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "bastard",
+          "index": 76,
+          "ipa": "ˈbæstərd",
+          "text": "bastard"
+        },
+        {
+          "clean": "broke",
+          "index": 77,
+          "ipa": "broʊk",
+          "text": "broke"
+        },
+        {
+          "clean": "my",
+          "index": 78,
+          "ipa": "maɪ",
+          "text": "my"
+        },
+        {
+          "clean": "wing",
+          "index": 79,
+          "ipa": "wɪŋ",
+          "text": "wing"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "syllables": 8,
+      "text": "So I can't, but I can still sing",
+      "words": [
+        {
+          "clean": "So",
+          "index": 80,
+          "ipa": "soʊ",
+          "text": "So"
+        },
+        {
+          "clean": "I",
+          "index": 81,
+          "ipa": "aɪ",
+          "text": "I"
+        },
+        {
+          "clean": "can't",
+          "index": 82,
+          "ipa": "kænt",
+          "text": "can't,"
+        },
+        {
+          "clean": "but",
+          "index": 83,
+          "ipa": "bʌt",
+          "text": "but"
+        },
+        {
+          "clean": "I",
+          "index": 84,
+          "ipa": "aɪ",
+          "text": "I"
+        },
+        {
+          "clean": "can",
+          "index": 85,
+          "ipa": "kæn",
+          "text": "can"
+        },
+        {
+          "clean": "still",
+          "index": 86,
+          "ipa": "stɪl",
+          "text": "still"
+        },
+        {
+          "clean": "sing",
+          "index": 87,
+          "ipa": "sɪŋ",
+          "text": "sing"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "syllables": 7,
+      "text": "Or could, besides these lead lungs",
+      "words": [
+        {
+          "clean": "Or",
+          "index": 88,
+          "ipa": "ɔr",
+          "text": "Or"
+        },
+        {
+          "clean": "could",
+          "index": 89,
+          "ipa": "kʊd",
+          "text": "could,"
+        },
+        {
+          "clean": "besides",
+          "index": 90,
+          "ipa": "bɪˈsaɪdz",
+          "text": "besides"
+        },
+        {
+          "clean": "these",
+          "index": 91,
+          "ipa": "ðiz",
+          "text": "these"
+        },
+        {
+          "clean": "lead",
+          "index": 92,
+          "ipa": "lɛd",
+          "text": "lead"
+        },
+        {
+          "clean": "lungs",
+          "index": 93,
+          "ipa": "lʌŋz",
+          "text": "lungs"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "syllables": 5,
+      "text": "Which won't let me breathe",
+      "words": [
+        {
+          "clean": "Which",
+          "index": 94,
+          "ipa": "wɪʧ",
+          "text": "Which"
+        },
+        {
+          "clean": "won't",
+          "index": 95,
+          "ipa": "woʊnt",
+          "text": "won't"
+        },
+        {
+          "clean": "let",
+          "index": 96,
+          "ipa": "lɛt",
+          "text": "let"
+        },
+        {
+          "clean": "me",
+          "index": 97,
+          "ipa": "mi",
+          "text": "me"
+        },
+        {
+          "clean": "breathe",
+          "index": 98,
+          "ipa": "brið",
+          "text": "breathe"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "syllables": 6,
+      "text": "All squeeze and no release",
+      "words": [
+        {
+          "clean": "All",
+          "index": 99,
+          "ipa": "ɔl",
+          "text": "All"
+        },
+        {
+          "clean": "squeeze",
+          "index": 100,
+          "ipa": "skwiz",
+          "text": "squeeze"
+        },
+        {
+          "clean": "and",
+          "index": 101,
+          "ipa": "ænd",
+          "text": "and"
+        },
+        {
+          "clean": "no",
+          "index": 102,
+          "ipa": "noʊ",
+          "text": "no"
+        },
+        {
+          "clean": "release",
+          "index": 103,
+          "ipa": "rɪˈlis",
+          "text": "release"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "syllables": 10,
+      "text": "It's 3 in the morning, windows open wide",
+      "words": [
+        {
+          "clean": "It's",
+          "index": 104,
+          "ipa": "ɪts",
+          "text": "It's"
+        },
+        {
+          "clean": "3",
+          "index": 105,
+          "ipa": "θri",
+          "text": "3"
+        },
+        {
+          "clean": "in",
+          "index": 106,
+          "ipa": "ɪn",
+          "text": "in"
+        },
+        {
+          "clean": "the",
+          "index": 107,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "morning",
+          "index": 108,
+          "ipa": "ˈmɔrnɪŋ",
+          "text": "morning,"
+        },
+        {
+          "clean": "windows",
+          "index": 109,
+          "ipa": "ˈwɪndoʊz",
+          "text": "windows"
+        },
+        {
+          "clean": "open",
+          "index": 110,
+          "ipa": "ˈoʊpən",
+          "text": "open"
+        },
+        {
+          "clean": "wide",
+          "index": 111,
+          "ipa": "waɪd",
+          "text": "wide"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "syllables": 10,
+      "text": "Crackling stars thunder, I tumble from sleep",
+      "words": [
+        {
+          "clean": "Crackling",
+          "index": 112,
+          "ipa": "krækəlɪŋ",
+          "text": "Crackling"
+        },
+        {
+          "clean": "stars",
+          "index": 113,
+          "ipa": "stɑrz",
+          "text": "stars"
+        },
+        {
+          "clean": "thunder",
+          "index": 114,
+          "ipa": "ˈθʌndər",
+          "text": "thunder,"
+        },
+        {
+          "clean": "I",
+          "index": 115,
+          "ipa": "aɪ",
+          "text": "I"
+        },
+        {
+          "clean": "tumble",
+          "index": 116,
+          "ipa": "ˈtʌmbəl",
+          "text": "tumble"
+        },
+        {
+          "clean": "from",
+          "index": 117,
+          "ipa": "frʌm",
+          "text": "from"
+        },
+        {
+          "clean": "sleep",
+          "index": 118,
+          "ipa": "slip",
+          "text": "sleep"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "syllables": 8,
+      "text": "You brush the water from my eyes",
+      "words": [
+        {
+          "clean": "You",
+          "index": 119,
+          "ipa": "ju",
+          "text": "You"
+        },
+        {
+          "clean": "brush",
+          "index": 120,
+          "ipa": "brʌʃ",
+          "text": "brush"
+        },
+        {
+          "clean": "the",
+          "index": 121,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "water",
+          "index": 122,
+          "ipa": "ˈwɔtər",
+          "text": "water"
+        },
+        {
+          "clean": "from",
+          "index": 123,
+          "ipa": "frʌm",
+          "text": "from"
+        },
+        {
+          "clean": "my",
+          "index": 124,
+          "ipa": "maɪ",
+          "text": "my"
+        },
+        {
+          "clean": "eyes",
+          "index": 125,
+          "ipa": "aɪz",
+          "text": "eyes"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "syllables": 8,
+      "text": "You wick away the water I weep",
+      "words": [
+        {
+          "clean": "You",
+          "index": 126,
+          "ipa": "ju",
+          "text": "You"
+        },
+        {
+          "clean": "wick",
+          "index": 127,
+          "ipa": "wɪk",
+          "text": "wick"
+        },
+        {
+          "clean": "away",
+          "index": 128,
+          "ipa": "əˈweɪ",
+          "text": "away"
+        },
+        {
+          "clean": "the",
+          "index": 129,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "water",
+          "index": 130,
+          "ipa": "ˈwɔtər",
+          "text": "water"
+        },
+        {
+          "clean": "I",
+          "index": 131,
+          "ipa": "aɪ",
+          "text": "I"
+        },
+        {
+          "clean": "weep",
+          "index": 132,
+          "ipa": "wip",
+          "text": "weep"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "syllables": 9,
+      "text": "I don’t need the savior energy",
+      "words": [
+        {
+          "clean": "I",
+          "index": 133,
+          "ipa": "aɪ",
+          "text": "I"
+        },
+        {
+          "clean": "don’t",
+          "index": 134,
+          "ipa": "doʊnt",
+          "text": "don’t"
+        },
+        {
+          "clean": "need",
+          "index": 135,
+          "ipa": "nid",
+          "text": "need"
+        },
+        {
+          "clean": "the",
+          "index": 136,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "savior",
+          "index": 137,
+          "ipa": "ˈseɪvjər",
+          "text": "savior"
+        },
+        {
+          "clean": "energy",
+          "index": 138,
+          "ipa": "ˈɛnərʤi",
+          "text": "energy"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "syllables": 10,
+      "text": "But stripped of all the lift, I’m not complete",
+      "words": [
+        {
+          "clean": "But",
+          "index": 139,
+          "ipa": "bʌt",
+          "text": "But"
+        },
+        {
+          "clean": "stripped",
+          "index": 140,
+          "ipa": "strɪpt",
+          "text": "stripped"
+        },
+        {
+          "clean": "of",
+          "index": 141,
+          "ipa": "ʌv",
+          "text": "of"
+        },
+        {
+          "clean": "all",
+          "index": 142,
+          "ipa": "ɔl",
+          "text": "all"
+        },
+        {
+          "clean": "the",
+          "index": 143,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "lift",
+          "index": 144,
+          "ipa": "lɪft",
+          "text": "lift,"
+        },
+        {
+          "clean": "I’m",
+          "index": 145,
+          "ipa": "aɪm",
+          "text": "I’m"
+        },
+        {
+          "clean": "not",
+          "index": 146,
+          "ipa": "nɑt",
+          "text": "not"
+        },
+        {
+          "clean": "complete",
+          "index": 147,
+          "ipa": "kəmˈplit",
+          "text": "complete"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "syllables": 9,
+      "text": "Don’t need you like a tree needs its leaves",
+      "words": [
+        {
+          "clean": "Don’t",
+          "index": 148,
+          "ipa": "doʊnt",
+          "text": "Don’t"
+        },
+        {
+          "clean": "need",
+          "index": 149,
+          "ipa": "nid",
+          "text": "need"
+        },
+        {
+          "clean": "you",
+          "index": 150,
+          "ipa": "ju",
+          "text": "you"
+        },
+        {
+          "clean": "like",
+          "index": 151,
+          "ipa": "laɪk",
+          "text": "like"
+        },
+        {
+          "clean": "a",
+          "index": 152,
+          "ipa": "ə",
+          "text": "a"
+        },
+        {
+          "clean": "tree",
+          "index": 153,
+          "ipa": "tri",
+          "text": "tree"
+        },
+        {
+          "clean": "needs",
+          "index": 154,
+          "ipa": "nidz",
+          "text": "needs"
+        },
+        {
+          "clean": "its",
+          "index": 155,
+          "ipa": "ɪts",
+          "text": "its"
+        },
+        {
+          "clean": "leaves",
+          "index": 156,
+          "ipa": "livz",
+          "text": "leaves"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "syllables": 8,
+      "text": "But I sure appreciate the breeze",
+      "words": [
+        {
+          "clean": "But",
+          "index": 157,
+          "ipa": "bʌt",
+          "text": "But"
+        },
+        {
+          "clean": "I",
+          "index": 158,
+          "ipa": "aɪ",
+          "text": "I"
+        },
+        {
+          "clean": "sure",
+          "index": 159,
+          "ipa": "ʃʊr",
+          "text": "sure"
+        },
+        {
+          "clean": "appreciate",
+          "index": 160,
+          "ipa": "əˈpriʃiˌeɪt",
+          "text": "appreciate"
+        },
+        {
+          "clean": "the",
+          "index": 161,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "breeze",
+          "index": 162,
+          "ipa": "briz",
+          "text": "breeze"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "syllables": 2,
+      "text": "Moon goose",
+      "words": [
+        {
+          "clean": "Moon",
+          "index": 163,
+          "ipa": "mun",
+          "text": "Moon"
+        },
+        {
+          "clean": "goose",
+          "index": 164,
+          "ipa": "gus",
+          "text": "goose"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "syllables": 6,
+      "text": "Tell me of the broken dream",
+      "words": [
+        {
+          "clean": "Tell",
+          "index": 165,
+          "ipa": "tɛl",
+          "text": "Tell"
+        },
+        {
+          "clean": "me",
+          "index": 166,
+          "ipa": "mi",
+          "text": "me"
+        },
+        {
+          "clean": "of",
+          "index": 167,
+          "ipa": "ʌv",
+          "text": "of"
+        },
+        {
+          "clean": "the",
+          "index": 168,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "broken",
+          "index": 169,
+          "ipa": "ˈbroʊkən",
+          "text": "broken"
+        },
+        {
+          "clean": "dream",
+          "index": 170,
+          "ipa": "drim",
+          "text": "dream"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "syllables": 8,
+      "text": "A cloth of sun torn down the seam",
+      "words": [
+        {
+          "clean": "A",
+          "index": 171,
+          "ipa": "ə",
+          "text": "A"
+        },
+        {
+          "clean": "cloth",
+          "index": 172,
+          "ipa": "klɔθ",
+          "text": "cloth"
+        },
+        {
+          "clean": "of",
+          "index": 173,
+          "ipa": "ʌv",
+          "text": "of"
+        },
+        {
+          "clean": "sun",
+          "index": 174,
+          "ipa": "sʌn",
+          "text": "sun"
+        },
+        {
+          "clean": "torn",
+          "index": 175,
+          "ipa": "tɔrn",
+          "text": "torn"
+        },
+        {
+          "clean": "down",
+          "index": 176,
+          "ipa": "daʊn",
+          "text": "down"
+        },
+        {
+          "clean": "the",
+          "index": 177,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "seam",
+          "index": 178,
+          "ipa": "sim",
+          "text": "seam"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "syllables": 8,
+      "text": "I’ll lick the tear and tongue the wound",
+      "words": [
+        {
+          "clean": "I’ll",
+          "index": 179,
+          "ipa": "aɪl",
+          "text": "I’ll"
+        },
+        {
+          "clean": "lick",
+          "index": 180,
+          "ipa": "lɪk",
+          "text": "lick"
+        },
+        {
+          "clean": "the",
+          "index": 181,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "tear",
+          "index": 182,
+          "ipa": "tɪr",
+          "text": "tear"
+        },
+        {
+          "clean": "and",
+          "index": 183,
+          "ipa": "ænd",
+          "text": "and"
+        },
+        {
+          "clean": "tongue",
+          "index": 184,
+          "ipa": "tʌŋ",
+          "text": "tongue"
+        },
+        {
+          "clean": "the",
+          "index": 185,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "wound",
+          "index": 186,
+          "ipa": "wund",
+          "text": "wound"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "syllables": 7,
+      "text": "To drink the darkness of the bloom",
+      "words": [
+        {
+          "clean": "To",
+          "index": 187,
+          "ipa": "tu",
+          "text": "To"
+        },
+        {
+          "clean": "drink",
+          "index": 188,
+          "ipa": "drɪŋk",
+          "text": "drink"
+        },
+        {
+          "clean": "the",
+          "index": 189,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "darkness",
+          "index": 190,
+          "ipa": "ˈdɑrknəs",
+          "text": "darkness"
+        },
+        {
+          "clean": "of",
+          "index": 191,
+          "ipa": "ʌv",
+          "text": "of"
+        },
+        {
+          "clean": "the",
+          "index": 192,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "bloom",
+          "index": 193,
+          "ipa": "blum",
+          "text": "bloom"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "syllables": 8,
+      "text": "Yes, it’s been a hard becoming",
+      "words": [
+        {
+          "clean": "Yes",
+          "index": 194,
+          "ipa": "jɛs",
+          "text": "Yes,"
+        },
+        {
+          "clean": "it’s",
+          "index": 195,
+          "ipa": "ɪts",
+          "text": "it’s"
+        },
+        {
+          "clean": "been",
+          "index": 196,
+          "ipa": "bɪn",
+          "text": "been"
+        },
+        {
+          "clean": "a",
+          "index": 197,
+          "ipa": "ə",
+          "text": "a"
+        },
+        {
+          "clean": "hard",
+          "index": 198,
+          "ipa": "hɑrd",
+          "text": "hard"
+        },
+        {
+          "clean": "becoming",
+          "index": 199,
+          "ipa": "bɪˈkʌmɪŋ",
+          "text": "becoming"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "syllables": 5,
+      "text": "Soften to the truth",
+      "words": [
+        {
+          "clean": "Soften",
+          "index": 200,
+          "ipa": "sɔfən",
+          "text": "Soften"
+        },
+        {
+          "clean": "to",
+          "index": 201,
+          "ipa": "tu",
+          "text": "to"
+        },
+        {
+          "clean": "the",
+          "index": 202,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "truth",
+          "index": 203,
+          "ipa": "truθ",
+          "text": "truth"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "syllables": 9,
+      "text": "I’m worried there’s not much to love here",
+      "words": [
+        {
+          "clean": "I’m",
+          "index": 204,
+          "ipa": "aɪm",
+          "text": "I’m"
+        },
+        {
+          "clean": "worried",
+          "index": 205,
+          "ipa": "ˈwɜrid",
+          "text": "worried"
+        },
+        {
+          "clean": "there’s",
+          "index": 206,
+          "ipa": "ðɛrz",
+          "text": "there’s"
+        },
+        {
+          "clean": "not",
+          "index": 207,
+          "ipa": "nɑt",
+          "text": "not"
+        },
+        {
+          "clean": "much",
+          "index": 208,
+          "ipa": "mʌʧ",
+          "text": "much"
+        },
+        {
+          "clean": "to",
+          "index": 209,
+          "ipa": "tu",
+          "text": "to"
+        },
+        {
+          "clean": "love",
+          "index": 210,
+          "ipa": "lʌv",
+          "text": "love"
+        },
+        {
+          "clean": "here",
+          "index": 211,
+          "ipa": "hir",
+          "text": "here"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "syllables": 5,
+      "text": "I’ve got such ample proof",
+      "words": [
+        {
+          "clean": "I’ve",
+          "index": 212,
+          "ipa": "aɪv",
+          "text": "I’ve"
+        },
+        {
+          "clean": "got",
+          "index": 213,
+          "ipa": "gɑt",
+          "text": "got"
+        },
+        {
+          "clean": "such",
+          "index": 214,
+          "ipa": "sʌʧ",
+          "text": "such"
+        },
+        {
+          "clean": "ample",
+          "index": 215,
+          "ipa": "ˈæmpəl",
+          "text": "ample"
+        },
+        {
+          "clean": "proof",
+          "index": 216,
+          "ipa": "pruf",
+          "text": "proof"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "syllables": 2,
+      "text": "Moon goose",
+      "words": [
+        {
+          "clean": "Moon",
+          "index": 217,
+          "ipa": "mun",
+          "text": "Moon"
+        },
+        {
+          "clean": "goose",
+          "index": 218,
+          "ipa": "gus",
+          "text": "goose"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "syllables": 8,
+      "text": "Soft rain falling from a velvet sky",
+      "words": [
+        {
+          "clean": "Soft",
+          "index": 219,
+          "ipa": "sɔft",
+          "text": "Soft"
+        },
+        {
+          "clean": "rain",
+          "index": 220,
+          "ipa": "reɪn",
+          "text": "rain"
+        },
+        {
+          "clean": "falling",
+          "index": 221,
+          "ipa": "fɔlɪŋ",
+          "text": "falling"
+        },
+        {
+          "clean": "from",
+          "index": 222,
+          "ipa": "frʌm",
+          "text": "from"
+        },
+        {
+          "clean": "a",
+          "index": 223,
+          "ipa": "ə",
+          "text": "a"
+        },
+        {
+          "clean": "velvet",
+          "index": 224,
+          "ipa": "ˈvɛlvət",
+          "text": "velvet"
+        },
+        {
+          "clean": "sky",
+          "index": 225,
+          "ipa": "skaɪ",
+          "text": "sky"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "syllables": 7,
+      "text": "Silver wisps of mourning light",
+      "words": [
+        {
+          "clean": "Silver",
+          "index": 226,
+          "ipa": "sɪlvər",
+          "text": "Silver"
+        },
+        {
+          "clean": "wisps",
+          "index": 227,
+          "ipa": "wɪsps",
+          "text": "wisps"
+        },
+        {
+          "clean": "of",
+          "index": 228,
+          "ipa": "ʌv",
+          "text": "of"
+        },
+        {
+          "clean": "mourning",
+          "index": 229,
+          "ipa": "ˈmɔrnɪŋ",
+          "text": "mourning"
+        },
+        {
+          "clean": "light",
+          "index": 230,
+          "ipa": "laɪt",
+          "text": "light"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "syllables": 4,
+      "text": "I am the night",
+      "words": [
+        {
+          "clean": "I",
+          "index": 231,
+          "ipa": "aɪ",
+          "text": "I"
+        },
+        {
+          "clean": "am",
+          "index": 232,
+          "ipa": "æm",
+          "text": "am"
+        },
+        {
+          "clean": "the",
+          "index": 233,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "night",
+          "index": 234,
+          "ipa": "naɪt",
+          "text": "night"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "syllables": 5,
+      "text": "I am the night wind",
+      "words": [
+        {
+          "clean": "I",
+          "index": 235,
+          "ipa": "aɪ",
+          "text": "I"
+        },
+        {
+          "clean": "am",
+          "index": 236,
+          "ipa": "æm",
+          "text": "am"
+        },
+        {
+          "clean": "the",
+          "index": 237,
+          "ipa": "ðə",
+          "text": "the"
+        },
+        {
+          "clean": "night",
+          "index": 238,
+          "ipa": "naɪt",
+          "text": "night"
+        },
+        {
+          "clean": "wind",
+          "index": 239,
+          "ipa": "wɪnd",
+          "text": "wind"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "syllables": 8,
+      "text": "Drip by drop, tick by tock",
+      "words": [
+        {
+          "clean": "Drip",
+          "index": 240,
+          "ipa": "drɪp",
+          "text": "Drip"
+        },
+        {
+          "clean": "by",
+          "index": 241,
+          "ipa": "baɪ",
+          "text": "by"
+        },
+        {
+          "clean": "drop",
+          "index": 242,
+          "ipa": "drɑp",
+          "text": "drop,"
+        },
+        {
+          "clean": "tick",
+          "index": 243,
+          "ipa": "tɪk",
+          "text": "tick"
+        },
+        {
+          "clean": "by",
+          "index": 244,
+          "ipa": "baɪ",
+          "text": "by"
+        },
+        {
+          "clean": "tock",
+          "index": 245,
+          "ipa": "tɑk",
+          "text": "tock"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "syllables": 6,
+      "text": "Until I can fly again",
+      "words": [
+        {
+          "clean": "Until",
+          "index": 246,
+          "ipa": "ʌnˈtɪl",
+          "text": "Until"
+        },
+        {
+          "clean": "I",
+          "index": 247,
+          "ipa": "aɪ",
+          "text": "I"
+        },
+        {
+          "clean": "can",
+          "index": 248,
+          "ipa": "kæn",
+          "text": "can"
+        },
+        {
+          "clean": "fly",
+          "index": 249,
+          "ipa": "flaɪ",
+          "text": "fly"
+        },
+        {
+          "clean": "again",
+          "index": 250,
+          "ipa": "əˈgɛn",
+          "text": "again"
+        }
+      ]
+    }
+  ],
+  "rhymes": [
+    {
+      "id": "rhyme_long_e",
+      "name": "Long E (Perfect & Slant)",
+      "words": [
+        {
+          "lineIndex": 0,
+          "wordIndex": 3
+        },
+        {
+          "lineIndex": 1,
+          "wordIndex": 7
+        },
+        {
+          "lineIndex": 3,
+          "wordIndex": 18
+        },
+        {
+          "lineIndex": 4,
+          "wordIndex": 21
+        },
+        {
+          "lineIndex": 10,
+          "wordIndex": 43
+        },
+        {
+          "lineIndex": 11,
+          "wordIndex": 47
+        },
+        {
+          "lineIndex": 19,
+          "wordIndex": 98
+        },
+        {
+          "lineIndex": 20,
+          "wordIndex": 100
+        },
+        {
+          "lineIndex": 20,
+          "wordIndex": 103
+        },
+        {
+          "lineIndex": 22,
+          "wordIndex": 118
+        },
+        {
+          "lineIndex": 24,
+          "wordIndex": 132
+        },
+        {
+          "lineIndex": 25,
+          "wordIndex": 138
+        },
+        {
+          "lineIndex": 26,
+          "wordIndex": 147
+        },
+        {
+          "lineIndex": 27,
+          "wordIndex": 153
+        },
+        {
+          "lineIndex": 27,
+          "wordIndex": 156
+        },
+        {
+          "lineIndex": 28,
+          "wordIndex": 162
+        },
+        {
+          "lineIndex": 30,
+          "wordIndex": 170
+        },
+        {
+          "lineIndex": 31,
+          "wordIndex": 178
+        }
+      ]
+    },
+    {
+      "id": "rhyme_long_i",
+      "name": "Long I (Perfect & Slant)",
+      "words": [
+        {
+          "lineIndex": 2,
+          "wordIndex": 16
+        },
+        {
+          "lineIndex": 5,
+          "wordIndex": 26
+        },
+        {
+          "lineIndex": 7,
+          "wordIndex": 36
+        },
+        {
+          "lineIndex": 8,
+          "wordIndex": 38
+        },
+        {
+          "lineIndex": 9,
+          "wordIndex": 39
+        },
+        {
+          "lineIndex": 12,
+          "wordIndex": 53
+        },
+        {
+          "lineIndex": 13,
+          "wordIndex": 59
+        },
+        {
+          "lineIndex": 15,
+          "wordIndex": 68
+        },
+        {
+          "lineIndex": 16,
+          "wordIndex": 72
+        },
+        {
+          "lineIndex": 21,
+          "wordIndex": 111
+        },
+        {
+          "lineIndex": 23,
+          "wordIndex": 125
+        },
+        {
+          "lineIndex": 39,
+          "wordIndex": 225
+        },
+        {
+          "lineIndex": 40,
+          "wordIndex": 230
+        },
+        {
+          "lineIndex": 41,
+          "wordIndex": 234
+        },
+        {
+          "lineIndex": 44,
+          "wordIndex": 249
+        }
+      ]
+    },
+    {
+      "id": "rhyme_short_i",
+      "name": "Short I (Perfect & Slant)",
+      "words": [
+        {
+          "lineIndex": 6,
+          "wordIndex": 28
+        },
+        {
+          "lineIndex": 14,
+          "wordIndex": 65
+        },
+        {
+          "lineIndex": 15,
+          "wordIndex": 70
+        },
+        {
+          "lineIndex": 16,
+          "wordIndex": 79
+        },
+        {
+          "lineIndex": 17,
+          "wordIndex": 87
+        },
+        {
+          "lineIndex": 24,
+          "wordIndex": 127
+        },
+        {
+          "lineIndex": 26,
+          "wordIndex": 144
+        },
+        {
+          "lineIndex": 42,
+          "wordIndex": 239
+        },
+        {
+          "lineIndex": 43,
+          "wordIndex": 243
+        }
+      ]
+    },
+    {
+      "id": "rhyme_u",
+      "name": "Long U /u/ (Perfect & Slant)",
+      "words": [
+        {
+          "lineIndex": 13,
+          "wordIndex": 54
+        },
+        {
+          "lineIndex": 29,
+          "wordIndex": 163
+        },
+        {
+          "lineIndex": 29,
+          "wordIndex": 164
+        },
+        {
+          "lineIndex": 32,
+          "wordIndex": 186
+        },
+        {
+          "lineIndex": 33,
+          "wordIndex": 193
+        },
+        {
+          "lineIndex": 35,
+          "wordIndex": 203
+        },
+        {
+          "lineIndex": 37,
+          "wordIndex": 216
+        },
+        {
+          "lineIndex": 38,
+          "wordIndex": 217
+        },
+        {
+          "lineIndex": 38,
+          "wordIndex": 218
+        }
+      ]
+    },
+    {
+      "id": "rhyme_short_a",
+      "name": "Short A (Slant)",
+      "words": [
+        {
+          "lineIndex": 7,
+          "wordIndex": 32
+        },
+        {
+          "lineIndex": 11,
+          "wordIndex": 44
+        },
+        {
+          "lineIndex": 12,
+          "wordIndex": 50
+        },
+        {
+          "lineIndex": 15,
+          "wordIndex": 66
+        },
+        {
+          "lineIndex": 16,
+          "wordIndex": 76
+        }
+      ]
+    }
+  ]
+}
