@@ -1,0 +1,42 @@
+{
+    "name": "lyrical-phonetics-desktop",
+    "version": "1.0.0",
+    "main": "main.js",
+    "description": "Desktop shell for Lyrical Phonetics",
+    "author": "Tio Savich",
+    "scripts": {
+        "build": "electron-builder -m"
+    },
+    "devDependencies": {
+        "electron": "^33.0.0",
+        "electron-builder": "^25.1.0"
+    },
+    "build": {
+        "appId": "com.lyricalphonetics.app",
+        "productName": "Lyrical Phonetics",
+        "mac": {
+            "category": "public.app-category.education",
+            "target": [
+                "dmg"
+            ]
+        },
+        "directories": {
+            "output": "../dist-electron"
+        },
+        "files": [
+            "main.js",
+            "preload.js",
+            "dist/**/*",
+            "package.json"
+        ],
+        "extraResources": [
+            {
+                "from": "../build/python-backend",
+                "to": "bin",
+                "filter": [
+                    "**/*"
+                ]
+            }
+        ]
+    }
+}

@@ -15529,56 +15529,56 @@
   "sections": [
     {
       "id": 0,
-      "label": "verse",
+      "label": "section-1",
       "start_line": 0,
       "end_line": 7,
       "line_count": 8
     },
     {
       "id": 1,
-      "label": "prechorus",
+      "label": "section-2",
       "start_line": 9,
       "end_line": 13,
       "line_count": 5
     },
     {
       "id": 2,
-      "label": "chorus",
+      "label": "section-3",
       "start_line": 15,
       "end_line": 20,
       "line_count": 6
     },
     {
       "id": 3,
-      "label": "verse",
+      "label": "section-4",
       "start_line": 22,
       "end_line": 25,
       "line_count": 4
     },
     {
       "id": 4,
-      "label": "prechorus",
+      "label": "section-5",
       "start_line": 27,
       "end_line": 29,
       "line_count": 3
     },
     {
       "id": 5,
-      "label": "chorus",
+      "label": "section-6",
       "start_line": 31,
       "end_line": 34,
       "line_count": 4
     },
     {
       "id": 6,
-      "label": "bridge",
+      "label": "section-7",
       "start_line": 36,
       "end_line": 45,
       "line_count": 10
     },
     {
       "id": 7,
-      "label": "chorus",
+      "label": "section-8",
       "start_line": 47,
       "end_line": 50,
       "line_count": 4
@@ -15606,9 +15606,7 @@
         "rhyme:rhyme-0"
       ],
       "device_count": 9,
-      "device_density": 1.29,
-      "is_repeated": false,
-      "adjusted_density": 1.29
+      "device_density": 1.29
     },
     {
       "line_id": 1,
@@ -15627,9 +15625,7 @@
         "rhyme:rhyme-2"
       ],
       "device_count": 12,
-      "device_density": 2.0,
-      "is_repeated": false,
-      "adjusted_density": 2.0
+      "device_density": 2.0
     },
     {
       "line_id": 2,
@@ -15647,9 +15643,7 @@
         "rhyme:rhyme-3"
       ],
       "device_count": 11,
-      "device_density": 1.83,
-      "is_repeated": false,
-      "adjusted_density": 1.83
+      "device_density": 1.83
     },
     {
       "line_id": 3,
@@ -15674,9 +15668,7 @@
         "rhyme:rhyme-6"
       ],
       "device_count": 18,
-      "device_density": 2.25,
-      "is_repeated": false,
-      "adjusted_density": 2.25
+      "device_density": 2.25
     },
     {
       "line_id": 4,
@@ -15695,9 +15687,7 @@
         "rhyme:rhyme-6"
       ],
       "device_count": 12,
-      "device_density": 1.71,
-      "is_repeated": false,
-      "adjusted_density": 1.71
+      "device_density": 1.71
     },
     {
       "line_id": 5,
@@ -15713,9 +15703,7 @@
         "rhyme:rhyme-8"
       ],
       "device_count": 9,
-      "device_density": 1.5,
-      "is_repeated": false,
-      "adjusted_density": 1.5
+      "device_density": 1.5
     },
     {
       "line_id": 6,
@@ -15737,9 +15725,7 @@
         "rhyme:rhyme-9"
       ],
       "device_count": 15,
-      "device_density": 2.14,
-      "is_repeated": false,
-      "adjusted_density": 2.14
+      "device_density": 2.14
     },
     {
       "line_id": 7,
@@ -15756,17 +15742,13 @@
         "rhyme:rhyme-6"
       ],
       "device_count": 10,
-      "device_density": 2.0,
-      "is_repeated": false,
-      "adjusted_density": 2.0
+      "device_density": 2.0
     },
     {
       "line_id": 8,
       "devices": [],
       "device_count": 0,
-      "device_density": 0.0,
-      "is_repeated": false,
-      "adjusted_density": 0.0
+      "device_density": 0.0
     },
     {
       "line_id": 9,
@@ -15787,9 +15769,7 @@
         "rhyme:rhyme-7"
       ],
       "device_count": 14,
-      "device_density": 1.75,
-      "is_repeated": false,
-      "adjusted_density": 1.75
+      "device_density": 1.75
     },
     {
       "line_id": 10,
@@ -15809,9 +15789,7 @@
         "rhyme:rhyme-11"
       ],
       "device_count": 13,
-      "device_density": 1.62,
-      "is_repeated": false,
-      "adjusted_density": 1.62
+      "device_density": 1.62
     },
     {
       "line_id": 11,
@@ -15833,9 +15811,7 @@
         "rhyme:rhyme-3"
       ],
       "device_count": 15,
-      "device_density": 1.67,
-      "is_repeated": false,
-      "adjusted_density": 1.67
+      "device_density": 1.67
     },
     {
       "line_id": 12,
@@ -15852,9 +15828,7 @@
         "rhyme:rhyme-7"
       ],
       "device_count": 10,
-      "device_density": 2.5,
-      "is_repeated": false,
-      "adjusted_density": 2.5
+      "device_density": 2.5
     },
     {
       "line_id": 13,
@@ -15871,17 +15845,13 @@
         "rhyme:rhyme-7"
       ],
       "device_count": 10,
-      "device_density": 2.0,
-      "is_repeated": false,
-      "adjusted_density": 2.0
+      "device_density": 2.0
     },
     {
       "line_id": 14,
       "devices": [],
       "device_count": 0,
-      "device_density": 0.0,
-      "is_repeated": false,
-      "adjusted_density": 0.0
+      "device_density": 0.0
     },
     {
       "line_id": 15,
@@ -15896,9 +15866,7 @@
         "rhyme:rhyme-8"
       ],
       "device_count": 8,
-      "device_density": 2.67,
-      "is_repeated": true,
-      "adjusted_density": 0.0
+      "device_density": 2.67
     },
     {
       "line_id": 16,
@@ -15911,9 +15879,7 @@
         "rhyme:rhyme-17"
       ],
       "device_count": 6,
-      "device_density": 1.0,
-      "is_repeated": true,
-      "adjusted_density": 0.0
+      "device_density": 1.0
     },
     {
       "line_id": 17,
@@ -15930,9 +15896,7 @@
         "rhyme:rhyme-18"
       ],
       "device_count": 10,
-      "device_density": 2.0,
-      "is_repeated": true,
-      "adjusted_density": 0.0
+      "device_density": 2.0
     },
     {
       "line_id": 18,
@@ -15944,9 +15908,7 @@
         "rhyme:rhyme-8"
       ],
       "device_count": 5,
-      "device_density": 1.67,
-      "is_repeated": true,
-      "adjusted_density": 0.0
+      "device_density": 1.67
     },
     {
       "line_id": 19,
@@ -15960,9 +15922,7 @@
         "rhyme:rhyme-8"
       ],
       "device_count": 7,
-      "device_density": 1.75,
-      "is_repeated": true,
-      "adjusted_density": 0.0
+      "device_density": 1.75
     },
     {
       "line_id": 20,
@@ -15976,17 +15936,13 @@
         "rhyme:rhyme-8"
       ],
       "device_count": 7,
-      "device_density": 1.75,
-      "is_repeated": true,
-      "adjusted_density": 0.0
+      "device_density": 1.75
     },
     {
       "line_id": 21,
       "devices": [],
       "device_count": 0,
-      "device_density": 0.0,
-      "is_repeated": false,
-      "adjusted_density": 0.0
+      "device_density": 0.0
     },
     {
       "line_id": 22,
@@ -16006,9 +15962,7 @@
         "rhyme:rhyme-21"
       ],
       "device_count": 13,
-      "device_density": 1.86,
-      "is_repeated": false,
-      "adjusted_density": 1.86
+      "device_density": 1.86
     },
     {
       "line_id": 23,
@@ -16026,9 +15980,7 @@
         "rhyme:rhyme-21"
       ],
       "device_count": 11,
-      "device_density": 1.57,
-      "is_repeated": false,
-      "adjusted_density": 1.57
+      "device_density": 1.57
     },
     {
       "line_id": 24,
@@ -16044,9 +15996,7 @@
         "rhyme:rhyme-7"
       ],
       "device_count": 9,
-      "device_density": 1.5,
-      "is_repeated": false,
-      "adjusted_density": 1.5
+      "device_density": 1.5
     },
     {
       "line_id": 25,
@@ -16067,17 +16017,13 @@
         "rhyme:rhyme-9"
       ],
       "device_count": 14,
-      "device_density": 2.0,
-      "is_repeated": false,
-      "adjusted_density": 2.0
+      "device_density": 2.0
     },
     {
       "line_id": 26,
       "devices": [],
       "device_count": 0,
-      "device_density": 0.0,
-      "is_repeated": false,
-      "adjusted_density": 0.0
+      "device_density": 0.0
     },
     {
       "line_id": 27,
@@ -16095,9 +16041,7 @@
         "rhyme:rhyme-22"
       ],
       "device_count": 11,
-      "device_density": 1.57,
-      "is_repeated": false,
-      "adjusted_density": 1.57
+      "device_density": 1.57
     },
     {
       "line_id": 28,
@@ -16116,9 +16060,7 @@
         "rhyme:rhyme-4"
       ],
       "device_count": 12,
-      "device_density": 1.71,
-      "is_repeated": false,
-      "adjusted_density": 1.71
+      "device_density": 1.71
     },
     {
       "line_id": 29,
@@ -16134,17 +16076,13 @@
         "rhyme:rhyme-8"
       ],
       "device_count": 9,
-      "device_density": 2.25,
-      "is_repeated": false,
-      "adjusted_density": 2.25
+      "device_density": 2.25
     },
     {
       "line_id": 30,
       "devices": [],
       "device_count": 0,
-      "device_density": 0.0,
-      "is_repeated": false,
-      "adjusted_density": 0.0
+      "device_density": 0.0
     },
     {
       "line_id": 31,
@@ -16165,9 +16103,7 @@
         "rhyme:rhyme-8"
       ],
       "device_count": 14,
-      "device_density": 2.0,
-      "is_repeated": false,
-      "adjusted_density": 2.0
+      "device_density": 2.0
     },
     {
       "line_id": 32,
@@ -16186,9 +16122,7 @@
         "rhyme:rhyme-10"
       ],
       "device_count": 12,
-      "device_density": 1.5,
-      "is_repeated": false,
-      "adjusted_density": 1.5
+      "device_density": 1.5
     },
     {
       "line_id": 33,
@@ -16206,9 +16140,7 @@
         "rhyme:rhyme-9"
       ],
       "device_count": 11,
-      "device_density": 1.83,
-      "is_repeated": false,
-      "adjusted_density": 1.83
+      "device_density": 1.83
     },
     {
       "line_id": 34,
@@ -16225,17 +16157,13 @@
         "rhyme:rhyme-8"
       ],
       "device_count": 10,
-      "device_density": 1.43,
-      "is_repeated": false,
-      "adjusted_density": 1.43
+      "device_density": 1.43
     },
     {
       "line_id": 35,
       "devices": [],
       "device_count": 0,
-      "device_density": 0.0,
-      "is_repeated": false,
-      "adjusted_density": 0.0
+      "device_density": 0.0
     },
     {
       "line_id": 36,
@@ -16254,9 +16182,7 @@
         "rhyme:rhyme-23"
       ],
       "device_count": 12,
-      "device_density": 1.71,
-      "is_repeated": false,
-      "adjusted_density": 1.71
+      "device_density": 1.71
     },
     {
       "line_id": 37,
@@ -16275,9 +16201,7 @@
         "rhyme:rhyme-11"
       ],
       "device_count": 12,
-      "device_density": 1.71,
-      "is_repeated": false,
-      "adjusted_density": 1.71
+      "device_density": 1.71
     },
     {
       "line_id": 38,
@@ -16298,9 +16222,7 @@
         "rhyme:rhyme-20"
       ],
       "device_count": 14,
-      "device_density": 1.56,
-      "is_repeated": false,
-      "adjusted_density": 1.56
+      "device_density": 1.56
     },
     {
       "line_id": 39,
@@ -16322,9 +16244,7 @@
         "rhyme:rhyme-7"
       ],
       "device_count": 15,
-      "device_density": 2.14,
-      "is_repeated": false,
-      "adjusted_density": 2.14
+      "device_density": 2.14
     },
     {
       "line_id": 40,
@@ -16339,9 +16259,7 @@
         "rhyme:rhyme-7"
       ],
       "device_count": 8,
-      "device_density": 2.0,
-      "is_repeated": false,
-      "adjusted_density": 2.0
+      "device_density": 2.0
     },
     {
       "line_id": 41,
@@ -16354,9 +16272,7 @@
         "rhyme:rhyme-7"
       ],
       "device_count": 6,
-      "device_density": 2.0,
-      "is_repeated": false,
-      "adjusted_density": 2.0
+      "device_density": 2.0
     },
     {
       "line_id": 42,
@@ -16372,9 +16288,7 @@
         "rhyme:rhyme-25"
       ],
       "device_count": 9,
-      "device_density": 1.8,
-      "is_repeated": false,
-      "adjusted_density": 1.8
+      "device_density": 1.8
     },
     {
       "line_id": 43,
@@ -16386,9 +16300,7 @@
         "rhyme:rhyme-24"
       ],
       "device_count": 5,
-      "device_density": 2.5,
-      "is_repeated": false,
-      "adjusted_density": 2.5
+      "device_density": 2.5
     },
     {
       "line_id": 44,
@@ -16405,9 +16317,7 @@
         "rhyme:rhyme-25"
       ],
       "device_count": 10,
-      "device_density": 2.5,
-      "is_repeated": false,
-      "adjusted_density": 2.5
+      "device_density": 2.5
     },
     {
       "line_id": 45,
@@ -16428,17 +16338,13 @@
         "rhyme:rhyme-24"
       ],
       "device_count": 14,
-      "device_density": 2.33,
-      "is_repeated": false,
-      "adjusted_density": 2.33
+      "device_density": 2.33
     },
     {
       "line_id": 46,
       "devices": [],
       "device_count": 0,
-      "device_density": 0.0,
-      "is_repeated": false,
-      "adjusted_density": 0.0
+      "device_density": 0.0
     },
     {
       "line_id": 47,
@@ -16448,9 +16354,7 @@
         "rhyme:rhyme-8"
       ],
       "device_count": 3,
-      "device_density": 1.5,
-      "is_repeated": false,
-      "adjusted_density": 1.5
+      "device_density": 1.5
     },
     {
       "line_id": 48,
@@ -16463,9 +16367,7 @@
         "rhyme:rhyme-26"
       ],
       "device_count": 6,
-      "device_density": 2.0,
-      "is_repeated": false,
-      "adjusted_density": 2.0
+      "device_density": 2.0
     },
     {
       "line_id": 49,
@@ -16477,9 +16379,7 @@
         "rhyme:rhyme-26"
       ],
       "device_count": 5,
-      "device_density": 2.5,
-      "is_repeated": false,
-      "adjusted_density": 2.5
+      "device_density": 2.5
     },
     {
       "line_id": 50,
@@ -16499,17 +16399,13 @@
         "rhyme:rhyme-17"
       ],
       "device_count": 13,
-      "device_density": 2.17,
-      "is_repeated": false,
-      "adjusted_density": 2.17
+      "device_density": 2.17
     },
     {
       "line_id": 51,
       "devices": [],
       "device_count": 0,
-      "device_density": 0.0,
-      "is_repeated": false,
-      "adjusted_density": 0.0
+      "device_density": 0.0
     },
     {
       "line_id": 52,
@@ -16524,9 +16420,7 @@
         "rhyme:rhyme-8"
       ],
       "device_count": 8,
-      "device_density": 2.67,
-      "is_repeated": true,
-      "adjusted_density": 0.0
+      "device_density": 2.67
     },
     {
       "line_id": 53,
@@ -16539,9 +16433,7 @@
         "rhyme:rhyme-17"
       ],
       "device_count": 6,
-      "device_density": 1.0,
-      "is_repeated": true,
-      "adjusted_density": 0.0
+      "device_density": 1.0
     },
     {
       "line_id": 54,
@@ -16558,9 +16450,7 @@
         "rhyme:rhyme-18"
       ],
       "device_count": 10,
-      "device_density": 2.0,
-      "is_repeated": true,
-      "adjusted_density": 0.0
+      "device_density": 2.0
     },
     {
       "line_id": 55,
@@ -16572,9 +16462,7 @@
         "rhyme:rhyme-8"
       ],
       "device_count": 5,
-      "device_density": 1.67,
-      "is_repeated": true,
-      "adjusted_density": 0.0
+      "device_density": 1.67
     },
     {
       "line_id": 56,
@@ -16588,9 +16476,7 @@
         "rhyme:rhyme-8"
       ],
       "device_count": 7,
-      "device_density": 1.75,
-      "is_repeated": true,
-      "adjusted_density": 0.0
+      "device_density": 1.75
     },
     {
       "line_id": 57,
@@ -16604,23 +16490,19 @@
         "rhyme:rhyme-8"
       ],
       "device_count": 7,
-      "device_density": 1.75,
-      "is_repeated": true,
-      "adjusted_density": 0.0
+      "device_density": 1.75
     },
     {
       "line_id": 58,
       "devices": [],
       "device_count": 0,
-      "device_density": 0.0,
-      "is_repeated": false,
-      "adjusted_density": 0.0
+      "device_density": 0.0
     }
   ],
   "regularity": [
     {
       "type": "regularity",
-      "description": "Sections chorus, bridge, section-9 share end-line rhyme group 'ready/red'",
+      "description": "Sections section-3, section-7, section-9 share end-line rhyme group 'ready/red'",
       "sections_involved": [
         2,
         6,
@@ -16629,7 +16511,7 @@
     },
     {
       "type": "regularity",
-      "description": "Sections chorus, prechorus, chorus, section-9 share end-line rhyme group 'below/grow/know/row/shadow/show/slow/snow'",
+      "description": "Sections section-3, section-5, section-6, section-9 share end-line rhyme group 'below/grow/know/row/shadow/show/slow/snow'",
       "sections_involved": [
         2,
         4,
@@ -16639,7 +16521,7 @@
     },
     {
       "type": "regularity",
-      "description": "Sections bridge, chorus share end-line rhyme group 'about/out'",
+      "description": "Sections section-7, section-8 share end-line rhyme group 'about/out'",
       "sections_involved": [
         6,
         7
@@ -16647,803 +16529,17 @@
     },
     {
       "type": "parallel_assonance",
-      "description": "Sections verse, verse share assonance patterns: Flat A (cat), Long E (see), Long I (eye), Long O (go), Long U (blue), Open A (father), Schwa/Uh (but), Short E (bed), Short I (bit)",
+      "description": "Sections section-1, section-2, section-3, section-4, section-5, section-6, section-7, section-8, section-9 share assonance patterns: Long O (go), Short I (bit)",
       "sections_involved": [
         0,
-        3
-      ]
-    },
-    {
-      "type": "parallel_assonance",
-      "description": "Sections prechorus, prechorus share assonance patterns: Flat A (cat), Long A (say), Long I (eye), Long O (go), Long U (blue), Schwa/Uh (but), Short I (bit)",
-      "sections_involved": [
         1,
-        4
-      ]
-    },
-    {
-      "type": "parallel_assonance",
-      "description": "Sections chorus, chorus, chorus share assonance patterns: Long O (go), Ow (cow), Short I (bit)",
-      "sections_involved": [
         2,
-        5,
-        7
-      ]
-    }
-  ],
-  "anaphora": [
-    {
-      "id": "anaphora-0",
-      "normalized": "dont you know",
-      "line_ids": [
-        15,
-        52
-      ],
-      "count": 2
-    },
-    {
-      "id": "anaphora-1",
-      "normalized": "about the stags in the trees",
-      "line_ids": [
-        16,
-        53
-      ],
-      "count": 2
-    },
-    {
-      "id": "anaphora-2",
-      "normalized": "about the wolves buried deep",
-      "line_ids": [
-        17,
-        54
-      ],
-      "count": 2
-    },
-    {
-      "id": "anaphora-3",
-      "normalized": "in the snow",
-      "line_ids": [
-        18,
-        55
-      ],
-      "count": 2
-    },
-    {
-      "id": "anaphora-4",
-      "normalized": "six in a row",
-      "line_ids": [
-        19,
-        56
-      ],
-      "count": 2
-    },
-    {
-      "id": "anaphora-5",
-      "normalized": "red above red below",
-      "line_ids": [
-        20,
-        57
-      ],
-      "count": 2
-    }
-  ],
-  "syllable_symmetry": [
-    {
-      "position": 6,
-      "base_label": "verse",
-      "sections": [
-        "verse",
-        "verse"
-      ],
-      "counts": [
-        8,
-        0
-      ],
-      "delta": 8,
-      "max_count": 8,
-      "min_count": 0
-    },
-    {
-      "position": 7,
-      "base_label": "verse",
-      "sections": [
-        "verse",
-        "verse"
-      ],
-      "counts": [
-        8,
-        0
-      ],
-      "delta": 8,
-      "max_count": 8,
-      "min_count": 0
-    },
-    {
-      "position": 4,
-      "base_label": "verse",
-      "sections": [
-        "verse",
-        "verse"
-      ],
-      "counts": [
-        7,
-        0
-      ],
-      "delta": 7,
-      "max_count": 7,
-      "min_count": 0
-    },
-    {
-      "position": 5,
-      "base_label": "verse",
-      "sections": [
-        "verse",
-        "verse"
-      ],
-      "counts": [
-        7,
-        0
-      ],
-      "delta": 7,
-      "max_count": 7,
-      "min_count": 0
-    },
-    {
-      "position": 3,
-      "base_label": "chorus",
-      "sections": [
-        "chorus",
-        "chorus",
-        "chorus"
-      ],
-      "counts": [
         3,
-        10,
-        7
-      ],
-      "delta": 7,
-      "max_count": 10,
-      "min_count": 3
-    },
-    {
-      "position": 5,
-      "base_label": "chorus",
-      "sections": [
-        "chorus",
-        "chorus",
-        "chorus"
-      ],
-      "counts": [
-        6,
-        0,
-        0
-      ],
-      "delta": 6,
-      "max_count": 6,
-      "min_count": 0
-    },
-    {
-      "position": 3,
-      "base_label": "prechorus",
-      "sections": [
-        "prechorus",
-        "prechorus"
-      ],
-      "counts": [
-        5,
-        0
-      ],
-      "delta": 5,
-      "max_count": 5,
-      "min_count": 0
-    },
-    {
-      "position": 4,
-      "base_label": "prechorus",
-      "sections": [
-        "prechorus",
-        "prechorus"
-      ],
-      "counts": [
-        5,
-        0
-      ],
-      "delta": 5,
-      "max_count": 5,
-      "min_count": 0
-    },
-    {
-      "position": 1,
-      "base_label": "chorus",
-      "sections": [
-        "chorus",
-        "chorus",
-        "chorus"
-      ],
-      "counts": [
-        7,
-        8,
-        3
-      ],
-      "delta": 5,
-      "max_count": 8,
-      "min_count": 3
-    },
-    {
-      "position": 2,
-      "base_label": "chorus",
-      "sections": [
-        "chorus",
-        "chorus",
-        "chorus"
-      ],
-      "counts": [
-        7,
-        8,
-        3
-      ],
-      "delta": 5,
-      "max_count": 8,
-      "min_count": 3
-    },
-    {
-      "position": 1,
-      "base_label": "prechorus",
-      "sections": [
-        "prechorus",
-        "prechorus"
-      ],
-      "counts": [
-        11,
-        7
-      ],
-      "delta": 4,
-      "max_count": 11,
-      "min_count": 7
-    },
-    {
-      "position": 2,
-      "base_label": "prechorus",
-      "sections": [
-        "prechorus",
-        "prechorus"
-      ],
-      "counts": [
-        10,
-        6
-      ],
-      "delta": 4,
-      "max_count": 10,
-      "min_count": 6
-    },
-    {
-      "position": 0,
-      "base_label": "chorus",
-      "sections": [
-        "chorus",
-        "chorus",
-        "chorus"
-      ],
-      "counts": [
-        3,
-        7,
-        4
-      ],
-      "delta": 4,
-      "max_count": 7,
-      "min_count": 3
-    },
-    {
-      "position": 4,
-      "base_label": "chorus",
-      "sections": [
-        "chorus",
-        "chorus",
-        "chorus"
-      ],
-      "counts": [
         4,
-        0,
-        0
-      ],
-      "delta": 4,
-      "max_count": 4,
-      "min_count": 0
-    },
-    {
-      "position": 0,
-      "base_label": "prechorus",
-      "sections": [
-        "prechorus",
-        "prechorus"
-      ],
-      "counts": [
-        10,
-        7
-      ],
-      "delta": 3,
-      "max_count": 10,
-      "min_count": 7
-    },
-    {
-      "position": 1,
-      "base_label": "verse",
-      "sections": [
-        "verse",
-        "verse"
-      ],
-      "counts": [
-        9,
-        7
-      ],
-      "delta": 2,
-      "max_count": 9,
-      "min_count": 7
-    },
-    {
-      "position": 2,
-      "base_label": "verse",
-      "sections": [
-        "verse",
-        "verse"
-      ],
-      "counts": [
-        9,
+        5,
+        6,
+        7,
         8
-      ],
-      "delta": 1,
-      "max_count": 9,
-      "min_count": 8
-    },
-    {
-      "position": 3,
-      "base_label": "verse",
-      "sections": [
-        "verse",
-        "verse"
-      ],
-      "counts": [
-        8,
-        7
-      ],
-      "delta": 1,
-      "max_count": 8,
-      "min_count": 7
-    }
-  ],
-  "suggestions": [
-    {
-      "line_id": 0,
-      "line_text": "When the owls woke, rustling the leaves",
-      "density": 1.29,
-      "suggestions": [
-        {
-          "word": "mountain",
-          "reason": "rhymes with 'fountain/mountains'",
-          "device": "rhyme",
-          "group_id": "rhyme-2"
-        },
-        {
-          "word": "abou",
-          "reason": "rhymes with 'you'",
-          "device": "rhyme",
-          "group_id": "rhyme-3"
-        },
-        {
-          "word": "abreu",
-          "reason": "rhymes with 'you'",
-          "device": "rhyme",
-          "group_id": "rhyme-3"
-        },
-        {
-          "word": "accrue",
-          "reason": "rhymes with 'you'",
-          "device": "rhyme",
-          "group_id": "rhyme-3"
-        },
-        {
-          "word": "acclaim",
-          "reason": "rhymes with 'blame/flame/same'",
-          "device": "rhyme",
-          "group_id": "rhyme-6"
-        }
-      ]
-    },
-    {
-      "line_id": 34,
-      "line_text": "My third two-monster morning in a row",
-      "density": 1.43,
-      "suggestions": [
-        {
-          "word": "adl-tabatabai",
-          "reason": "rhymes with 'i'",
-          "device": "rhyme",
-          "group_id": "rhyme-7"
-        },
-        {
-          "word": "ai",
-          "reason": "rhymes with 'i'",
-          "device": "rhyme",
-          "group_id": "rhyme-7"
-        },
-        {
-          "word": "anyhow",
-          "reason": "rhymes with 'somehow/sow'",
-          "device": "rhyme",
-          "group_id": "rhyme-10"
-        },
-        {
-          "word": "bandow",
-          "reason": "rhymes with 'somehow/sow'",
-          "device": "rhyme",
-          "group_id": "rhyme-10"
-        },
-        {
-          "word": "barbakow",
-          "reason": "rhymes with 'somehow/sow'",
-          "device": "rhyme",
-          "group_id": "rhyme-10"
-        }
-      ]
-    },
-    {
-      "line_id": 5,
-      "line_text": "Am I in a mirror show",
-      "density": 1.5,
-      "suggestions": [
-        {
-          "word": "mountain",
-          "reason": "rhymes with 'fountain/mountains'",
-          "device": "rhyme",
-          "group_id": "rhyme-2"
-        },
-        {
-          "word": "anyhow",
-          "reason": "rhymes with 'somehow/sow'",
-          "device": "rhyme",
-          "group_id": "rhyme-10"
-        },
-        {
-          "word": "bandow",
-          "reason": "rhymes with 'somehow/sow'",
-          "device": "rhyme",
-          "group_id": "rhyme-10"
-        },
-        {
-          "word": "barbakow",
-          "reason": "rhymes with 'somehow/sow'",
-          "device": "rhyme",
-          "group_id": "rhyme-10"
-        },
-        {
-          "word": "abou",
-          "reason": "rhymes with 'you'",
-          "device": "rhyme",
-          "group_id": "rhyme-3"
-        }
-      ]
-    },
-    {
-      "line_id": 24,
-      "line_text": "I dream in an electric sleep",
-      "density": 1.5,
-      "suggestions": [
-        {
-          "word": "adin",
-          "reason": "rhymes with 'been/skin'",
-          "device": "rhyme",
-          "group_id": "rhyme-20"
-        },
-        {
-          "word": "akin",
-          "reason": "rhymes with 'been/skin'",
-          "device": "rhyme",
-          "group_id": "rhyme-20"
-        },
-        {
-          "word": "allin",
-          "reason": "rhymes with 'been/skin'",
-          "device": "rhyme",
-          "group_id": "rhyme-20"
-        },
-        {
-          "word": "barone's",
-          "reason": "rhymes with 'bones/stones'",
-          "device": "rhyme",
-          "group_id": "rhyme-21"
-        },
-        {
-          "word": "bastogne's",
-          "reason": "rhymes with 'bones/stones'",
-          "device": "rhyme",
-          "group_id": "rhyme-21"
-        }
-      ]
-    },
-    {
-      "line_id": 32,
-      "line_text": "I've ash to give and salt to sow",
-      "density": 1.5,
-      "suggestions": [
-        {
-          "word": "adl-tabatabai",
-          "reason": "rhymes with 'i'",
-          "device": "rhyme",
-          "group_id": "rhyme-7"
-        },
-        {
-          "word": "ai",
-          "reason": "rhymes with 'i'",
-          "device": "rhyme",
-          "group_id": "rhyme-7"
-        },
-        {
-          "word": "aglo",
-          "reason": "rhymes with 'below/grow/know/row/shadow/show/slow/snow'",
-          "device": "rhyme",
-          "group_id": "rhyme-8"
-        },
-        {
-          "word": "aglow",
-          "reason": "rhymes with 'below/grow/know/row/shadow/show/slow/snow'",
-          "device": "rhyme",
-          "group_id": "rhyme-8"
-        },
-        {
-          "word": "ago",
-          "reason": "rhymes with 'below/grow/know/row/shadow/show/slow/snow'",
-          "device": "rhyme",
-          "group_id": "rhyme-8"
-        }
-      ]
-    }
-  ],
-  "cascade_suggestions": [
-    {
-      "cascade_id": "cascade-0",
-      "name": "me/me/me/my/my/...",
-      "skeleton": "M _V_",
-      "existing_vowels": [
-        "AY",
-        "IY"
-      ],
-      "suggestions": [
-        {
-          "word": "ma",
-          "vowel": "AA"
-        },
-        {
-          "word": "mae",
-          "vowel": "EY"
-        },
-        {
-          "word": "mah",
-          "vowel": "AA"
-        },
-        {
-          "word": "mao",
-          "vowel": "AW"
-        },
-        {
-          "word": "mau",
-          "vowel": "OW"
-        }
-      ]
-    },
-    {
-      "cascade_id": "cascade-1",
-      "name": "am/am/i'm/i'm/i'm",
-      "skeleton": "_V_ M",
-      "existing_vowels": [
-        "AE",
-        "AY"
-      ],
-      "suggestions": [
-        {
-          "word": "'em",
-          "vowel": "AH"
-        },
-        {
-          "word": "'m",
-          "vowel": "AH"
-        },
-        {
-          "word": "aim",
-          "vowel": "EY"
-        },
-        {
-          "word": "aime",
-          "vowel": "EY"
-        },
-        {
-          "word": "ame",
-          "vowel": "EY"
-        }
-      ]
-    },
-    {
-      "cascade_id": "cascade-2",
-      "name": "in/in/in/in/in/...",
-      "skeleton": "_V_ N",
-      "existing_vowels": [
-        "AA",
-        "AE",
-        "IH",
-        "OW"
-      ],
-      "suggestions": [
-        {
-          "word": "'n",
-          "vowel": "AH"
-        },
-        {
-          "word": "aine",
-          "vowel": "EY"
-        },
-        {
-          "word": "ane",
-          "vowel": "EY"
-        },
-        {
-          "word": "aune",
-          "vowel": "AO"
-        },
-        {
-          "word": "ayn",
-          "vowel": "EY"
-        }
-      ]
-    },
-    {
-      "cascade_id": "cascade-3",
-      "name": "say/sow/say",
-      "skeleton": "S _V_",
-      "existing_vowels": [
-        "AW",
-        "EY"
-      ],
-      "suggestions": [
-        {
-          "word": "c",
-          "vowel": "IY"
-        },
-        {
-          "word": "c.",
-          "vowel": "IY"
-        },
-        {
-          "word": "cie",
-          "vowel": "IY"
-        },
-        {
-          "word": "cy",
-          "vowel": "AY"
-        },
-        {
-          "word": "psi",
-          "vowel": "AY"
-        }
-      ]
-    },
-    {
-      "cascade_id": "cascade-4",
-      "name": "at/it/out",
-      "skeleton": "_V_ T",
-      "existing_vowels": [
-        "AE",
-        "AW",
-        "IH"
-      ],
-      "suggestions": [
-        {
-          "word": "ate",
-          "vowel": "EY"
-        },
-        {
-          "word": "aught",
-          "vowel": "AO"
-        },
-        {
-          "word": "aydt",
-          "vowel": "EY"
-        },
-        {
-          "word": "eat",
-          "vowel": "IY"
-        },
-        {
-          "word": "eight",
-          "vowel": "EY"
-        }
-      ]
-    },
-    {
-      "cascade_id": "cascade-5",
-      "name": "you're/your/you're",
-      "skeleton": "Y _V_ R",
-      "existing_vowels": [
-        "AO",
-        "UH"
-      ],
-      "suggestions": [
-        {
-          "word": "ure",
-          "vowel": "UW"
-        },
-        {
-          "word": "yahr",
-          "vowel": "AA"
-        },
-        {
-          "word": "year",
-          "vowel": "IH"
-        },
-        {
-          "word": "yoor",
-          "vowel": "UW"
-        }
-      ]
-    },
-    {
-      "cascade_id": "cascade-6",
-      "name": "cut/coat",
-      "skeleton": "K _V_ T",
-      "existing_vowels": [
-        "AH",
-        "OW"
-      ],
-      "suggestions": [
-        {
-          "word": "cat",
-          "vowel": "AE"
-        },
-        {
-          "word": "cate",
-          "vowel": "EY"
-        },
-        {
-          "word": "catt",
-          "vowel": "AE"
-        },
-        {
-          "word": "caught",
-          "vowel": "AA"
-        },
-        {
-          "word": "caught",
-          "vowel": "AO"
-        }
-      ]
-    },
-    {
-      "cascade_id": "cascade-7",
-      "name": "of/i've",
-      "skeleton": "_V_ V",
-      "existing_vowels": [
-        "AH",
-        "AY"
-      ],
-      "suggestions": [
-        {
-          "word": "eave",
-          "vowel": "IY"
-        },
-        {
-          "word": "ev",
-          "vowel": "EH"
-        },
-        {
-          "word": "eve",
-          "vowel": "IY"
-        },
-        {
-          "word": "irv",
-          "vowel": "ER"
-        },
-        {
-          "word": "irve",
-          "vowel": "ER"
-        }
       ]
     }
   ]

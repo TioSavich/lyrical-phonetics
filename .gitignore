@@ -1,13 +1,23 @@
 # Dependencies
 node_modules/
 .npm
-package-lock.json
 
 # Build outputs
 dist/
-build/
+dist-electron/
+build/python-backend/
+python/build/
+python/dist/
+python/__pycache__/
+python/.pytest_cache/
+python/*.spec
 *.pyc
 __pycache__/
+
+# Electron
+electron/node_modules/
+electron/package-lock.json
+electron/dist/
 
 # IDE and OS files
 .DS_Store
@@ -22,3 +32,8 @@ __pycache__/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Large binaries (use GitHub Releases instead)
+*.dmg
+*.exe
+*.app

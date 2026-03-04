@@ -1,0 +1,6 @@
+# Additional dependencies for the desktop app build
+# Install with: pip install -r requirements-app.txt
+-r requirements.txt
+flask
+flask-cors
+pyinstaller
