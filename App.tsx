@@ -1,300 +1,548 @@
-import React, { useState, useCallback } from 'react';
-import { AnalysisResult, AppView, DeviceType, DEVICE_TYPES } from './types';
-import ControlPanel from './components/ControlPanel';
-import ManuscriptView from './components/ManuscriptView';
-import XRayView from './components/XRayView';
-import WorkshopView from './components/WorkshopView';
-import { Download, Upload, FileText, Printer, Minimize2, Maximize2, Sparkles } from 'lucide-react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
+import { getEngine, SubstitutionEngine, SubstitutionResult, WordInfo } from './engine/SubstitutionEngine';
+import { phonemeToCSS, phonemeToBgCSS, phonemeToHighlightCSS, stripStress, isVowel, VOWELS, CONSONANTS, VOWEL_NAMES } from './engine/phonemeColors';
+
+// ── Types ──
+
+type AppView = 'notepad' | 'paint';
+
+type PoemWord = {
+  text: string;
+  clean: string;
+  info: WordInfo | null;
+  lineIndex: number;
+  wordIndex: number;
+};
+
+type PoemLine = {
+  lineIndex: number;
+  text: string;
+  words: PoemWord[];
+  isEmpty: boolean;
+};
+
+type HistoryEntry = {
+  lineIndex: number;
+  wordIndex: number;
+  oldWord: string;
+  newWord: string;
+  timestamp: number;
+};
+
+type DeviceType = 'alliteration' | 'assonance' | 'consonance' | 'rhyme';
+
+// ── Helpers ──
+
+function cleanWord(w: string): string {
+  return w.replace(/^[^a-zA-Z']+|[^a-zA-Z']+$/g, '');
+}
+
+function buildPoemLines(text: string, engine: SubstitutionEngine): PoemLine[] {
+  return text.split('\n').map((line, li) => {
+    const rawWords = line.split(/\s+/).filter(Boolean);
+    const words: PoemWord[] = rawWords.map((w, wi) => {
+      const clean = cleanWord(w);
+      return {
+        text: w,
+        clean,
+        info: clean ? engine.getWordInfo(clean) : null,
+        lineIndex: li,
+        wordIndex: wi,
+      };
+    });
+    return {
+      lineIndex: li,
+      text: line,
+      words,
+      isEmpty: line.trim() === '',
+    };
+  });
+}
+
+// ── App ──
 
 const App: React.FC = () => {
-  const [analysisData, setAnalysisData] = useState<AnalysisResult | null>(null);
-  const [appView, setAppView] = useState<AppView>(AppView.LOAD);
-  const [activeDevices, setActiveDevices] = useState<Set<DeviceType>>(new Set(['rhymes']));
-  const [showDensity, setShowDensity] = useState(true);
-  const [fileName, setFileName] = useState<string>('');
-  const [hoveredGroup, setHoveredGroup] = useState<string | null>(null);
-  const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
-  const [isCompact, setIsCompact] = useState(false);
+  const [view, setView] = useState<AppView>('notepad');
   const [lyricsText, setLyricsText] = useState('');
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [poemLines, setPoemLines] = useState<PoemLine[]>([]);
+  const [engineReady, setEngineReady] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [selectedWord, setSelectedWord] = useState<PoemWord | null>(null);
+  const [popupPos, setPopupPos] = useState({ x: 0, y: 0 });
+  const [activeDevice, setActiveDevice] = useState<DeviceType | null>(null);
+  const [activePhoneme, setActivePhoneme] = useState<string | null>(null);
+  const [substitutions, setSubstitutions] = useState<Map<number, SubstitutionResult[]>>(new Map());
+  const [history, setHistory] = useState<HistoryEntry[]>([]);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const engineRef = useRef<SubstitutionEngine | null>(null);
+  const popupRef = useRef<HTMLDivElement>(null);
 
-  const handleAnalyzeText = useCallback(async () => {
-    if (!lyricsText.trim()) return;
-    setIsAnalyzing(true);
-    try {
-      const resp = await fetch('http://localhost:7744/analyze', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: lyricsText }),
-      });
-      if (!resp.ok) throw new Error('Analysis failed');
-      const data = await resp.json();
-      setAnalysisData(data);
-      setFileName('New Analysis');
-      setAppView(AppView.MANUSCRIPT);
-      setActiveDevices(new Set(['rhymes']));
-    } catch (err) {
-      console.error(err);
-      alert('Could not connect to the phonetic engine. Make sure the backend is running.');
-    } finally {
-      setIsAnalyzing(false);
-    }
+  // Initialize engine on mount
+  useEffect(() => {
+    const engine = getEngine();
+    engineRef.current = engine;
+    engine.init().then(() => setEngineReady(true));
+  }, []);
+
+  // Close popup on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (popupRef.current && !popupRef.current.contains(e.target as Node)) {
+        setSelectedWord(null);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
+  // ── Actions ──
+
+  const handlePaint = useCallback(() => {
+    if (!engineRef.current || !lyricsText.trim()) return;
+    setLoading(true);
+    // Use requestAnimationFrame to allow the spinner to render
+    requestAnimationFrame(() => {
+      const lines = buildPoemLines(lyricsText, engineRef.current!);
+      setPoemLines(lines);
+      setView('paint');
+      setLoading(false);
+      setHistory([]);
+      setSelectedWord(null);
+    });
   }, [lyricsText]);
 
-  const handleFileLoad = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+  const handleWordClick = useCallback((word: PoemWord, event: React.MouseEvent) => {
+    if (!word.info || !engineRef.current) return;
 
-    // Check if it's a .txt file (process via engine) or .json (load directly)
-    if (file.name.endsWith('.txt')) {
-      const reader = new FileReader();
-      reader.onload = async (evt) => {
-        const text = evt.target?.result as string;
-        setLyricsText(text);
-        // We set the text and could trigger analysis, but let the user verify in the textarea first
+    const rect = (event.target as HTMLElement).getBoundingClientRect();
+    const popupWidth = 340;
+    const x = Math.min(rect.left, window.innerWidth - popupWidth - 16);
+    const y = rect.bottom + 8;
+
+    setSelectedWord(word);
+    setPopupPos({ x, y: Math.min(y, window.innerHeight - 380) });
+
+    // Compute substitutions
+    const engine = engineRef.current;
+    if (activeDevice) {
+      const subs = engine.findDeviceSubstitutions(word.clean, activeDevice, activePhoneme);
+      const byPosition = new Map<number, SubstitutionResult[]>();
+      for (const s of subs) {
+        const pos = s.position ?? 0;
+        if (!byPosition.has(pos)) byPosition.set(pos, []);
+        byPosition.get(pos)!.push(s);
+      }
+      setSubstitutions(byPosition);
+    } else {
+      const allSubs = engine.findAllSubstitutions(word.clean);
+      setSubstitutions(allSubs);
+    }
+  }, [activeDevice, activePhoneme]);
+
+  const handleSubstitute = useCallback((word: PoemWord, newWordText: string) => {
+    const engine = engineRef.current;
+    if (!engine) return;
+
+    // Record history
+    setHistory(prev => [...prev, {
+      lineIndex: word.lineIndex,
+      wordIndex: word.wordIndex,
+      oldWord: word.clean,
+      newWord: newWordText,
+      timestamp: Date.now(),
+    }]);
+
+    // Update the poem
+    setPoemLines(prev => prev.map(line => {
+      if (line.lineIndex !== word.lineIndex) return line;
+      return {
+        ...line,
+        words: line.words.map(w => {
+          if (w.wordIndex !== word.wordIndex) return w;
+          // Preserve original punctuation
+          const leadPunc = w.text.match(/^[^a-zA-Z']*/)?.[0] ?? '';
+          const trailPunc = w.text.match(/[^a-zA-Z']*$/)?.[0] ?? '';
+          const newText = leadPunc + newWordText + trailPunc;
+          return {
+            ...w,
+            text: newText,
+            clean: newWordText,
+            info: engine.getWordInfo(newWordText),
+          };
+        }),
       };
-      reader.readAsText(file);
+    }));
+
+    setSelectedWord(null);
+  }, []);
+
+  const handleUndo = useCallback(() => {
+    if (history.length === 0) return;
+    const last = history[history.length - 1];
+    const engine = engineRef.current;
+    if (!engine) return;
+
+    setPoemLines(prev => prev.map(line => {
+      if (line.lineIndex !== last.lineIndex) return line;
+      return {
+        ...line,
+        words: line.words.map(w => {
+          if (w.wordIndex !== last.wordIndex) return w;
+          const leadPunc = w.text.match(/^[^a-zA-Z']*/)?.[0] ?? '';
+          const trailPunc = w.text.match(/[^a-zA-Z']*$/)?.[0] ?? '';
+          return {
+            ...w,
+            text: leadPunc + last.oldWord + trailPunc,
+            clean: last.oldWord,
+            info: engine.getWordInfo(last.oldWord),
+          };
+        }),
+      };
+    }));
+
+    setHistory(prev => prev.slice(0, -1));
+  }, [history]);
+
+  const handleSpeak = useCallback(() => {
+    if (!('speechSynthesis' in window)) return;
+
+    if (isSpeaking) {
+      speechSynthesis.cancel();
+      setIsSpeaking(false);
       return;
     }
 
-    setFileName(file.name);
-    const reader = new FileReader();
-    reader.onload = (evt) => {
-      try {
-        const data = JSON.parse(evt.target?.result as string) as AnalysisResult;
-        setAnalysisData(data);
-        setAppView(AppView.MANUSCRIPT);
-        setActiveDevices(new Set(['rhymes']));
-      } catch {
-        alert('Invalid JSON file. Please load a phonetic analysis JSON.');
+    const text = poemLines.map(l => l.words.map(w => w.text).join(' ')).join('\n');
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 0.85;
+    utterance.pitch = 1.0;
+    utterance.onend = () => setIsSpeaking(false);
+    utterance.onerror = () => setIsSpeaking(false);
+    setIsSpeaking(true);
+    speechSynthesis.speak(utterance);
+  }, [poemLines, isSpeaking]);
+
+  const handleBackToNotepad = useCallback(() => {
+    speechSynthesis?.cancel();
+    setIsSpeaking(false);
+    // Update lyrics text with current poem state
+    const newText = poemLines.map(l => l.words.map(w => w.text).join(' ')).join('\n');
+    setLyricsText(newText);
+    setView('notepad');
+    setSelectedWord(null);
+  }, [poemLines]);
+
+  // Get phonemes that are "paintable" for the current word given the active device
+  const getPaintablePhonemes = useCallback((word: PoemWord): Set<string> => {
+    if (!word.info || !activeDevice) return new Set();
+    const phonemes = word.info.phonemes;
+    const paintable = new Set<string>();
+    for (const p of phonemes) {
+      if (activeDevice === 'alliteration') {
+        if (p.isVowel) break;
+        paintable.add(p.clean);
+      } else if (activeDevice === 'assonance' && p.isVowel) {
+        paintable.add(p.clean);
+      } else if (activeDevice === 'consonance' && !p.isVowel) {
+        paintable.add(p.clean);
       }
-    };
-    reader.readAsText(file);
-    // Reset so onChange fires again if user picks a different file next time
-    e.target.value = '';
-  }, []);
-
-  const handleLoadSample = useCallback(async () => {
-    try {
-      const resp = await fetch('./output_examples/lyrics-phonetic-analysis-Cougar.json');
-      if (!resp.ok) throw new Error('Sample not found');
-      const data = await resp.json();
-      setAnalysisData(data);
-      setFileName('Cougar (sample)');
-      setAppView(AppView.MANUSCRIPT);
-      setActiveDevices(new Set(['rhymes']));
-    } catch {
-      alert('Could not load sample. Run the Python engine first to generate output.');
     }
-  }, []);
+    return paintable;
+  }, [activeDevice]);
 
-  const toggleDevice = useCallback((device: DeviceType) => {
-    setActiveDevices(prev => {
-      const next = new Set(prev);
-      if (next.has(device)) next.delete(device);
-      else next.add(device);
-      return next;
-    });
-  }, []);
+  // Check if a word has a phoneme that matches the active paint
+  const wordMatchesPaint = useCallback((word: PoemWord): boolean => {
+    if (!word.info || !activePhoneme) return false;
+    return word.info.phonemes.some(p => p.clean === activePhoneme);
+  }, [activePhoneme]);
 
-  const handleExport = useCallback(() => {
-    if (!analysisData) return;
-    const blob = new Blob([JSON.stringify(analysisData, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'lyrics-analysis.json';
-    a.click();
-    URL.revokeObjectURL(url);
-  }, [analysisData]);
+  // Compute current poem text for status bar
+  const totalWords = poemLines.reduce((sum, l) => sum + l.words.length, 0);
+  const knownWords = poemLines.reduce((sum, l) => sum + l.words.filter(w => w.info).length, 0);
+
+  // ── Render ──
 
   return (
-    <div className={`min-h-screen bg-slate-900 text-slate-50 flex flex-col font-sans selection:bg-indigo-500 selection:text-white ${isCompact ? 'compact-mode' : ''}`}>
+    <div className="app-shell">
       {/* Header */}
-      <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 print:hidden">
-        <div className="max-w-[1400px] mx-auto px-6 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center font-bold font-mono text-sm">
-              Ph
-            </div>
-            <h1 className="text-lg font-bold tracking-tight">Lyrical Phonetics</h1>
-            {fileName && (
-              <span className="text-sm text-slate-500 ml-2">— {fileName}</span>
-            )}
-          </div>
-
-          <div className="flex items-center gap-2">
-            {analysisData && appView !== AppView.LOAD && (
-              <>
-                {/* View tabs */}
-                <div className="flex bg-slate-800 rounded-lg p-0.5 mr-4">
-                  {([
-                    [AppView.MANUSCRIPT, 'Manuscript'],
-                    [AppView.XRAY, 'X-Ray'],
-                    [AppView.WORKSHOP, 'Workshop']
-                  ] as [AppView, string][]).map(([view, label]) => (
-                    <button
-                      key={view}
-                      onClick={() => setAppView(view)}
-                      className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${appView === view
-                        ? 'bg-indigo-600 text-white shadow-lg'
-                        : 'text-slate-400 hover:text-white'
-                        }`}
-                    >
-                      {label}
-                    </button>
-                  ))}
-                </div>
-
-                <button
-                  onClick={handleExport}
-                  className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5 text-sm px-2"
-                  title="Export JSON"
-                >
-                  <Download size={15} />
+      <header className="app-header">
+        <div className="logo-group">
+          <div className="logo-icon">Pp</div>
+          <span className="logo-text">PhonoPaint</span>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          {view === 'paint' && (
+            <>
+              <button className="btn-icon" onClick={handleBackToNotepad} title="Back to notepad">
+                ✏️
+              </button>
+              <button
+                className={`btn-icon ${isSpeaking ? 'active' : ''}`}
+                onClick={handleSpeak}
+                title={isSpeaking ? 'Stop reading' : 'Read aloud'}
+              >
+                {isSpeaking ? '⏹' : '🔊'}
+              </button>
+              {history.length > 0 && (
+                <button className="btn-icon" onClick={handleUndo} title="Undo last substitution">
+                  ↩
                 </button>
-                <button
-                  onClick={() => setIsCompact(!isCompact)}
-                  className={`transition-colors flex items-center gap-1.5 text-sm px-2 ${isCompact ? 'text-amber-400' : 'text-slate-400 hover:text-white'}`}
-                  title={isCompact ? 'Normal size' : 'Compact (fit to page)'}
-                >
-                  {isCompact ? <Maximize2 size={15} /> : <Minimize2 size={15} />}
-                </button>
-                <button
-                  onClick={() => window.print()}
-                  className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5 text-sm px-2"
-                  title="Print"
-                >
-                  <Printer size={15} />
-                </button>
-
-                {/* Load different file */}
-                <label className="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5 text-sm px-2 cursor-pointer"
-                  title="Load text or JSON">
-                  <Upload size={15} />
-                  <input type="file" accept=".json,.txt" onChange={handleFileLoad} className="hidden" />
-                </label>
-              </>
-            )}
-          </div>
+              )}
+            </>
+          )}
+          {!engineReady && (
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+              Loading dictionary…
+            </span>
+          )}
         </div>
       </header>
 
-      {/* Control bar (when viewing analysis) */}
-      {analysisData && appView !== AppView.LOAD && (appView === AppView.MANUSCRIPT || appView === AppView.XRAY) && (
-        <div className="sticky top-14 z-40 border-b border-slate-800/50 bg-slate-900/90 backdrop-blur-sm print:hidden">
-          <div className="max-w-[1400px] mx-auto px-6 py-2">
-            <ControlPanel
-              activeDevices={activeDevices}
-              toggleDevice={toggleDevice}
-              showDensity={showDensity}
-              setShowDensity={setShowDensity}
-            />
+      {/* ── Notepad View ── */}
+      {view === 'notepad' && (
+        <div className="notepad-container">
+          <div className="notepad-hero">
+            <div className="logo-icon" style={{ width: 56, height: 56, fontSize: '1.1rem', margin: '0 auto' }}>
+              Pp
+            </div>
+            <h2>Write something.</h2>
+            <p>Paste lyrics, a poem, or just a few lines — then paint them with sound.</p>
+          </div>
+
+          <textarea
+            className="notepad-textarea"
+            value={lyricsText}
+            onChange={e => setLyricsText(e.target.value)}
+            placeholder="The cat sat on the mat&#10;Thinking of a rat&#10;While the rain outside&#10;Started to slide…"
+          />
+
+          <div className="buttons-row">
+            <button
+              className={`paint-button ${loading ? 'loading' : ''}`}
+              disabled={!lyricsText.trim() || !engineReady || loading}
+              onClick={handlePaint}
+            >
+              {loading ? (
+                <><div className="spinner" /> Building grid…</>
+              ) : (
+                <>🎨 Paint It</>
+              )}
+            </button>
+          </div>
+
+          {!engineReady && (
+            <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '1rem' }}>
+              <span className="spinner" style={{ display: 'inline-block', width: 14, height: 14, verticalAlign: 'middle', marginRight: 6 }} />
+              Loading phoneme dictionary (3 MB, one-time)…
+            </p>
+          )}
+        </div>
+      )}
+
+      {/* ── Paint View ── */}
+      {view === 'paint' && (
+        <div className="paint-layout">
+          {/* Toolbar */}
+          <div className="paint-toolbar">
+            <div className="toolbar-group">
+              <span className="toolbar-label">Device</span>
+              {(['alliteration', 'assonance', 'consonance', 'rhyme'] as DeviceType[]).map(d => (
+                <button
+                  key={d}
+                  className={`device-chip ${activeDevice === d ? 'active' : ''}`}
+                  onClick={() => {
+                    setActiveDevice(prev => prev === d ? null : d);
+                    setActivePhoneme(null);
+                    setSelectedWord(null);
+                  }}
+                >
+                  {d === 'alliteration' ? '🅰 Allit.' :
+                   d === 'assonance' ? '🔵 Asson.' :
+                   d === 'consonance' ? '🟢 Cons.' :
+                   '🔴 Rhyme'}
+                </button>
+              ))}
+            </div>
+
+            <div className="toolbar-divider" />
+
+            {/* Phoneme Picker (when a device is active) */}
+            {activeDevice && (
+              <div className="toolbar-group" style={{ flexWrap: 'wrap', gap: '0.25rem' }}>
+                <span className="toolbar-label">Phoneme</span>
+                {Array.from(
+                  activeDevice === 'assonance' ? VOWELS :
+                  activeDevice === 'alliteration' || activeDevice === 'consonance' ? CONSONANTS :
+                  new Set<string>()
+                ).sort().map(ph => (
+                  <button
+                    key={ph}
+                    className={`device-chip ${activePhoneme === ph ? 'active' : ''}`}
+                    style={{
+                      padding: '0.2rem 0.5rem',
+                      fontSize: '0.7rem',
+                      borderColor: activePhoneme === ph ? phonemeToCSS(ph) : undefined,
+                      background: activePhoneme === ph ? phonemeToCSS(ph) : undefined,
+                    }}
+                    onClick={() => setActivePhoneme(prev => prev === ph ? null : ph)}
+                    title={VOWEL_NAMES[ph] ?? `/${ph}/`}
+                  >
+                    /{ph}/
+                  </button>
+                ))}
+              </div>
+            )}
+
+            <div style={{ flex: 1 }} />
+
+            {history.length > 0 && (
+              <div className="history-badge">
+                ↩ {history.length} edit{history.length > 1 ? 's' : ''}
+              </div>
+            )}
+          </div>
+
+          {/* Poem Grid */}
+          <div className="poem-grid">
+            {poemLines.map(line => (
+              <div key={line.lineIndex} className={`poem-line ${line.isEmpty ? 'empty-line' : ''}`}>
+                {!line.isEmpty && (
+                  <>
+                    <span className="line-number">{line.lineIndex + 1}</span>
+                    {line.words.map(word => {
+                      const hasInfo = !!word.info;
+                      const matchesPaint = wordMatchesPaint(word);
+                      const paintable = activeDevice && hasInfo && getPaintablePhonemes(word).size > 0;
+
+                      // Background color: use the primary stressed vowel color
+                      let bgColor = 'transparent';
+                      let textColor = hasInfo ? 'var(--text-primary)' : 'var(--text-muted)';
+
+                      if (hasInfo && word.info) {
+                        const stressedVowel = word.info.phonemes.find(p => p.stress === 1);
+                        if (stressedVowel) {
+                          bgColor = phonemeToBgCSS(stressedVowel.clean, 0.15);
+                        }
+                        if (matchesPaint && activePhoneme) {
+                          bgColor = phonemeToBgCSS(activePhoneme, 0.35);
+                          textColor = phonemeToHighlightCSS(activePhoneme);
+                        }
+                      }
+
+                      return (
+                        <span
+                          key={`${line.lineIndex}-${word.wordIndex}`}
+                          className={[
+                            'word-cell',
+                            selectedWord?.lineIndex === word.lineIndex && selectedWord?.wordIndex === word.wordIndex ? 'selected' : '',
+                            paintable ? 'paintable' : '',
+                            matchesPaint ? 'highlight' : '',
+                          ].filter(Boolean).join(' ')}
+                          style={{
+                            backgroundColor: bgColor,
+                            color: textColor,
+                            '--paint-glow': activePhoneme ? phonemeToBgCSS(activePhoneme, 0.4) : undefined,
+                            borderColor: matchesPaint && activePhoneme ? phonemeToCSS(activePhoneme) : undefined,
+                          } as React.CSSProperties}
+                          onClick={e => handleWordClick(word, e)}
+                          title={hasInfo ? word.info!.phones.join(' ') : 'Not in dictionary'}
+                        >
+                          {word.text}
+                        </span>
+                      );
+                    })}
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Status Bar */}
+          <div className="status-bar">
+            <div className="status-stat">
+              📝 {totalWords} words · {knownWords} in dictionary
+            </div>
+            <div className="status-stat">
+              {activeDevice ? (
+                <>{activeDevice}{activePhoneme ? ` · /${activePhoneme}/` : ''}</>
+              ) : (
+                <>Tap a word to explore</>
+              )}
+            </div>
           </div>
         </div>
       )}
 
-      <main className="flex-1 w-full flex flex-col items-center">
-        {/* Load screen */}
-        {appView === AppView.LOAD && (
-          <div className="flex flex-col items-center justify-center min-h-[70vh] w-full max-w-4xl px-6 py-12 gap-8 animate-fade-in">
-            <div className="text-center space-y-3">
-              <div className="w-16 h-16 mx-auto bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center font-bold font-mono text-2xl mb-6">
-                Ph
-              </div>
-              <h2 className="text-3xl font-bold">Lyrical Phonetics</h2>
-              <p className="text-slate-400 max-w-md mx-auto">
-                Paste your lyrics below or load an existing analysis to begin.
-              </p>
-            </div>
-
-            <div className="w-full space-y-4">
-              <div className="relative group">
-                <textarea
-                  value={lyricsText}
-                  onChange={(e) => setLyricsText(e.target.value)}
-                  placeholder="Paste your lyrics here (e.g. Verse, Chorus, etc.)..."
-                  className="w-full h-64 bg-slate-800/50 border-2 border-slate-700/50 rounded-2xl p-6 text-slate-100 placeholder:text-slate-600 focus:outline-none focus:border-indigo-500/50 focus:bg-slate-800 transition-all resize-none shadow-inner"
-                />
-                {!lyricsText && (
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none text-slate-700/30 group-hover:text-slate-700/50 transition-colors">
-                    <FileText size={80} strokeWidth={1} />
-                  </div>
-                )}
-              </div>
-
-              <div className="flex flex-wrap items-center justify-center gap-4">
-                <button
-                  onClick={handleAnalyzeText}
-                  disabled={!lyricsText.trim() || isAnalyzing}
-                  className={`flex items-center justify-center gap-2 px-8 py-3 rounded-full font-bold text-white shadow-lg transition-all transform hover:scale-105 active:scale-95 ${!lyricsText.trim() || isAnalyzing
-                    ? 'bg-slate-700 cursor-not-allowed opacity-50'
-                    : 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-indigo-600/20'
-                    }`}
-                >
-                  {isAnalyzing ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Analyzing...
-                    </>
-                  ) : (
-                    <>
-                      <Sparkles size={18} />
-                      Analyze Lyrics
-                    </>
-                  )}
-                </button>
-
-                <div className="flex items-center gap-2">
-                  <label className="flex items-center justify-center gap-2 px-5 py-3 rounded-full font-medium text-slate-300 bg-slate-800 hover:bg-slate-700 border border-slate-700 cursor-pointer transition-all">
-                    <Upload size={18} />
-                    Load .txt / .json
-                    <input type="file" accept=".json,.txt" onChange={handleFileLoad} className="hidden" />
-                  </label>
-
-                  <button
-                    onClick={handleLoadSample}
-                    className="flex items-center justify-center gap-2 px-5 py-3 rounded-full font-medium text-slate-400 hover:text-slate-200 transition-all"
-                  >
-                    View Sample (Cougar)
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <p className="text-slate-600 text-xs text-center">
-              Lyrical Phonetics uses a deterministic phonetic engine to find rhymes, assonance, and alliteration markers.
-            </p>
+      {/* ── Substitution Popup ── */}
+      {selectedWord && view === 'paint' && (
+        <div
+          ref={popupRef}
+          className="sub-popup"
+          style={{ left: popupPos.x, top: popupPos.y }}
+        >
+          <div className="sub-popup-header">
+            <span className="sub-popup-title">{selectedWord.clean}</span>
+            <span className="sub-popup-phonemes">
+              {selectedWord.info?.phones.map((p, i) => (
+                <span key={i} style={{ color: phonemeToCSS(p), marginRight: 4 }}>
+                  {p}
+                </span>
+              ))}
+            </span>
           </div>
-        )}
 
-        {/* Manuscript View */}
-        {analysisData && appView === AppView.MANUSCRIPT && (
-          <ManuscriptView
-            data={analysisData}
-            activeDevices={activeDevices}
-            showDensity={showDensity}
-            hoveredGroup={hoveredGroup}
-            setHoveredGroup={setHoveredGroup}
-            selectedGroup={selectedGroup}
-            setSelectedGroup={setSelectedGroup}
-            isCompact={isCompact}
-          />
-        )}
-
-        {/* X-Ray View */}
-        {analysisData && appView === AppView.XRAY && (
-          <XRayView
-            data={analysisData}
-            activeDevices={activeDevices}
-          />
-        )}
-
-        {/* Workshop View */}
-        {analysisData && appView === AppView.WORKSHOP && (
-          <WorkshopView data={analysisData} />
-        )}
-      </main>
+          {substitutions.size === 0 ? (
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', margin: '0.5rem 0' }}>
+              No substitutions found{activeDevice ? ` for ${activeDevice}` : ''}.
+              {!selectedWord.info && ' (Word not in dictionary.)'}
+            </p>
+          ) : (
+            Array.from(substitutions.entries())
+              .sort(([a], [b]) => a - b)
+              .map(([position, subs]) => {
+                const phoneme = selectedWord.info?.phones[position];
+                const posLabel = phoneme
+                  ? `Position ${position}: ${stripStress(phoneme)}`
+                  : `Position ${position}`;
+                return (
+                  <div key={position} className="sub-position-group">
+                    <div className="sub-position-label">
+                      <span
+                        className="phoneme-dot"
+                        style={{ backgroundColor: phoneme ? phonemeToCSS(phoneme) : '#666' }}
+                      />
+                      {posLabel}
+                      {phoneme && isVowel(phoneme) ? ' (vowel)' : ' (consonant)'}
+                      <span style={{ color: 'var(--text-muted)', fontWeight: 400, textTransform: 'none', letterSpacing: 0 }}>
+                        — {subs.length} option{subs.length > 1 ? 's' : ''}
+                      </span>
+                    </div>
+                    <div className="sub-list">
+                      {subs.slice(0, 24).map(s => (
+                        <button
+                          key={s.word}
+                          className="sub-chip"
+                          style={{
+                            borderColor: phonemeToBgCSS(s.substitutedPhoneme, 0.5),
+                          }}
+                          onClick={() => handleSubstitute(selectedWord, s.word)}
+                          title={`→ ${s.phones.join(' ')}`}
+                        >
+                          {s.word}
+                        </button>
+                      ))}
+                      {subs.length > 24 && (
+                        <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', padding: '0.3rem' }}>
+                          +{subs.length - 24} more
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                );
+              })
+          )}
+        </div>
+      )}
     </div>
   );
 };
