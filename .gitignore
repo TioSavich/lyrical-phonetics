@@ -8,6 +8,8 @@ dist-electron/
 build/python-backend/
 python/build/
 python/dist/
+python/.venv/
+python/venv/
 python/__pycache__/
 python/.pytest_cache/
 python/*.spec
