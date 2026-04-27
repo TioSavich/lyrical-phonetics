@@ -1,10 +1,14 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { getEngine, SubstitutionEngine, SubstitutionResult, WordInfo } from './engine/SubstitutionEngine';
 import { phonemeToCSS, phonemeToBgCSS, phonemeToHighlightCSS, stripStress, isVowel, VOWELS, CONSONANTS, VOWEL_NAMES } from './engine/phonemeColors';
+import { getLanguage, listLanguages } from './engine/languages/registry';
+import type { LanguageCode } from './engine/languages/Language';
+import { analyzeText, enrichSemantics, type DeviceAnalysis } from './engine/devices';
+import AnalysisView from './components/AnalysisView';
 
 // ── Types ──
 
-type AppView = 'notepad' | 'paint';
+type AppView = 'notepad' | 'paint' | 'analysis';
 
 type PoemWord = {
   text: string;
@@ -74,6 +78,11 @@ const App: React.FC = () => {
   const [substitutions, setSubstitutions] = useState<Map<number, SubstitutionResult[]>>(new Map());
   const [history, setHistory] = useState<HistoryEntry[]>([]);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [language, setLanguage] = useState<LanguageCode>('en');
+  const [analysis, setAnalysis] = useState<DeviceAnalysis | null>(null);
+  const [analysisText, setAnalysisText] = useState<string>('');
+  const [analyzing, setAnalyzing] = useState(false);
+  const [loadingSenses, setLoadingSenses] = useState(false);
   const engineRef = useRef<SubstitutionEngine | null>(null);
   const popupRef = useRef<HTMLDivElement>(null);
 
@@ -232,6 +241,32 @@ const App: React.FC = () => {
     setSelectedWord(null);
   }, [poemLines]);
 
+  // ── Analyze (language-agnostic) ──
+  const handleAnalyze = useCallback(async () => {
+    if (!lyricsText.trim()) return;
+    setAnalyzing(true);
+    try {
+      const lang = getLanguage(language);
+      await lang.init();
+      const result = analyzeText(lyricsText, lang);
+      setAnalysis(result);
+      setAnalysisText(lyricsText);
+      setView('analysis');
+      setLoadingSenses(true);
+      // Background: enrich homophone groups with senses, then re-render.
+      enrichSemantics(result, lang)
+        .then((enriched) => setAnalysis({ ...enriched }))
+        .catch(() => { /* best-effort */ })
+        .finally(() => setLoadingSenses(false));
+    } finally {
+      setAnalyzing(false);
+    }
+  }, [lyricsText, language]);
+
+  const handleBackFromAnalysis = useCallback(() => {
+    setView('notepad');
+  }, []);
+
   // Get phonemes that are "paintable" for the current word given the active device
   const getPaintablePhonemes = useCallback((word: PoemWord): Set<string> => {
     if (!word.info || !activeDevice) return new Set();
@@ -271,6 +306,11 @@ const App: React.FC = () => {
           <span className="logo-text">PhonoPaint</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          {view === 'analysis' && (
+            <button className="btn-icon" onClick={handleBackFromAnalysis} title="Back to notepad">
+              ✏️
+            </button>
+          )}
           {view === 'paint' && (
             <>
               <button className="btn-icon" onClick={handleBackToNotepad} title="Back to notepad">
@@ -316,16 +356,40 @@ const App: React.FC = () => {
             placeholder="The cat sat on the mat&#10;Thinking of a rat&#10;While the rain outside&#10;Started to slide…"
           />
 
-          <div className="buttons-row">
+          <div className="buttons-row" style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value as LanguageCode)}
+              className="btn-secondary"
+              style={{ padding: '0.7rem 1rem' }}
+              title="Language for analysis"
+            >
+              {listLanguages().map((l) => (
+                <option key={l.code} value={l.code}>{l.name}</option>
+              ))}
+            </select>
             <button
               className={`paint-button ${loading ? 'loading' : ''}`}
-              disabled={!lyricsText.trim() || !engineReady || loading}
+              disabled={!lyricsText.trim() || !engineReady || loading || language !== 'en'}
               onClick={handlePaint}
+              title={language !== 'en' ? 'Paint It is currently English-only' : ''}
             >
               {loading ? (
                 <><div className="spinner" /> Building grid…</>
               ) : (
                 <>🎨 Paint It</>
+              )}
+            </button>
+            <button
+              className="btn-secondary"
+              disabled={!lyricsText.trim() || analyzing}
+              onClick={handleAnalyze}
+              style={{ padding: '0.85rem 1.5rem', fontSize: '0.95rem', fontWeight: 600 }}
+            >
+              {analyzing ? (
+                <><div className="spinner" style={{ display: 'inline-block', width: 14, height: 14, marginRight: 6, verticalAlign: 'middle' }} /> Analyzing…</>
+              ) : (
+                <>🔬 Analyze</>
               )}
             </button>
           </div>
@@ -471,6 +535,11 @@ const App: React.FC = () => {
             </div>
           </div>
         </div>
+      )}
+
+      {/* ── Analysis View ── */}
+      {view === 'analysis' && analysis && (
+        <AnalysisView text={analysisText} analysis={analysis} loadingSenses={loadingSenses} />
       )}
 
       {/* ── Substitution Popup ── */}
