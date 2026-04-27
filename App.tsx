@@ -293,6 +293,26 @@ const App: React.FC = () => {
     setView('notepad');
   }, []);
 
+  const handleExportJSON = useCallback(() => {
+    if (!analysis && !fullAnalysis) return;
+    const payload = {
+      generatedAt: new Date().toISOString(),
+      language,
+      text: analysisText,
+      analysis: fullAnalysis ?? null,
+      devices: analysis ?? null,
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `lyrical-phonetics-${language}-${Date.now()}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, [analysis, fullAnalysis, analysisText, language]);
+
   // Get phonemes that are "paintable" for the current word given the active device
   const getPaintablePhonemes = useCallback((word: PoemWord): Set<string> => {
     if (!word.info || !activeDevice) return new Set();
@@ -573,6 +593,13 @@ const App: React.FC = () => {
               showDensity={showDensity}
               setShowDensity={setShowDensity}
             />
+            <button
+              className="export-json-btn"
+              onClick={handleExportJSON}
+              title="Download the complete analysis as JSON"
+            >
+              ⬇ Export JSON
+            </button>
           </div>
           <div className="analysis-tabs">
             {([
