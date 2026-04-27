@@ -4,7 +4,13 @@ import { phonemeToCSS, phonemeToBgCSS, phonemeToHighlightCSS, stripStress, isVow
 import { getLanguage, listLanguages } from './engine/languages/registry';
 import type { LanguageCode } from './engine/languages/Language';
 import { analyzeText, enrichSemantics, type DeviceAnalysis } from './engine/devices';
+import { analyzeFull } from './engine/analysis';
+import type { AnalysisResult, DeviceType as ResultDeviceType } from './types';
 import AnalysisView from './components/AnalysisView';
+import ManuscriptView from './components/ManuscriptView';
+import XRayView from './components/XRayView';
+import WorkshopView from './components/WorkshopView';
+import ControlPanel from './components/ControlPanel';
 
 // ── Types ──
 
@@ -80,9 +86,25 @@ const App: React.FC = () => {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [language, setLanguage] = useState<LanguageCode>('en');
   const [analysis, setAnalysis] = useState<DeviceAnalysis | null>(null);
+  const [fullAnalysis, setFullAnalysis] = useState<AnalysisResult | null>(null);
   const [analysisText, setAnalysisText] = useState<string>('');
   const [analyzing, setAnalyzing] = useState(false);
   const [loadingSenses, setLoadingSenses] = useState(false);
+  const [analysisTab, setAnalysisTab] = useState<'manuscript' | 'xray' | 'workshop' | 'devices'>('manuscript');
+  const [activeResultDevices, setActiveResultDevices] = useState<Set<ResultDeviceType>>(
+    new Set(['rhymes', 'assonance', 'alliteration', 'cascades'])
+  );
+  const [showDensity, setShowDensity] = useState(false);
+  const [hoveredGroup, setHoveredGroup] = useState<string | null>(null);
+  const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
+
+  const toggleResultDevice = useCallback((d: ResultDeviceType) => {
+    setActiveResultDevices(prev => {
+      const next = new Set(prev);
+      if (next.has(d)) next.delete(d); else next.add(d);
+      return next;
+    });
+  }, []);
   const engineRef = useRef<SubstitutionEngine | null>(null);
   const popupRef = useRef<HTMLDivElement>(null);
 
@@ -249,8 +271,12 @@ const App: React.FC = () => {
       const lang = getLanguage(language);
       await lang.init();
       const result = analyzeText(lyricsText, lang);
+      const full = analyzeFull(lyricsText, lang);
       setAnalysis(result);
+      setFullAnalysis(full);
       setAnalysisText(lyricsText);
+      setSelectedGroup(null);
+      setHoveredGroup(null);
       setView('analysis');
       setLoadingSenses(true);
       // Background: enrich homophone groups with senses, then re-render.
@@ -537,9 +563,54 @@ const App: React.FC = () => {
         </div>
       )}
 
-      {/* ── Analysis View ── */}
+      {/* ── Analysis View (tabbed) ── */}
       {view === 'analysis' && analysis && (
-        <AnalysisView text={analysisText} analysis={analysis} loadingSenses={loadingSenses} />
+        <div className="analysis-shell">
+          <div className="analysis-controls">
+            <ControlPanel
+              activeDevices={activeResultDevices}
+              toggleDevice={toggleResultDevice}
+              showDensity={showDensity}
+              setShowDensity={setShowDensity}
+            />
+          </div>
+          <div className="analysis-tabs">
+            {([
+              ['manuscript', '📜 Manuscript'],
+              ['xray', '📊 X-Ray'],
+              ['workshop', '🛠 Workshop'],
+              ['devices', '🔬 Devices'],
+            ] as const).map(([key, label]) => (
+              <button
+                key={key}
+                className={`analysis-tab ${analysisTab === key ? 'active' : ''}`}
+                onClick={() => setAnalysisTab(key)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          {analysisTab === 'devices' && (
+            <AnalysisView text={analysisText} analysis={analysis} loadingSenses={loadingSenses} />
+          )}
+          {analysisTab === 'manuscript' && fullAnalysis && (
+            <ManuscriptView
+              data={fullAnalysis}
+              activeDevices={activeResultDevices}
+              showDensity={showDensity}
+              hoveredGroup={hoveredGroup}
+              setHoveredGroup={setHoveredGroup}
+              selectedGroup={selectedGroup}
+              setSelectedGroup={setSelectedGroup}
+            />
+          )}
+          {analysisTab === 'xray' && fullAnalysis && (
+            <XRayView data={fullAnalysis} activeDevices={activeResultDevices} />
+          )}
+          {analysisTab === 'workshop' && fullAnalysis && (
+            <WorkshopView data={fullAnalysis} />
+          )}
+        </div>
       )}
 
       {/* ── Substitution Popup ── */}

@@ -1,6 +1,5 @@
 import React from 'react';
 import { DeviceType, DEVICE_TYPES } from '../types';
-import { Music2, Ear, Wind, Waves, BarChart3 } from 'lucide-react';
 
 interface ControlPanelProps {
   activeDevices: Set<DeviceType>;
@@ -9,11 +8,11 @@ interface ControlPanelProps {
   setShowDensity: (v: boolean) => void;
 }
 
-const DEVICE_META: Record<DeviceType, { label: string; icon: React.ReactNode; accent: string }> = {
-  rhymes: { label: 'Rhymes', icon: <Music2 size={14} />, accent: 'bg-red-500/20 text-red-400 border-red-500/30' },
-  assonance: { label: 'Assonance', icon: <Ear size={14} />, accent: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30' },
-  alliteration: { label: 'Alliteration', icon: <Wind size={14} />, accent: 'bg-green-500/20 text-green-400 border-green-500/30' },
-  cascades: { label: 'Cascades', icon: <Waves size={14} />, accent: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
+const DEVICE_META: Record<DeviceType, { label: string; icon: string; accent: string }> = {
+  rhymes: { label: 'Rhymes', icon: '🔴', accent: 'bg-red-500/20 text-red-400 border-red-500/30' },
+  assonance: { label: 'Assonance', icon: '🔵', accent: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30' },
+  alliteration: { label: 'Alliteration', icon: '🟢', accent: 'bg-green-500/20 text-green-400 border-green-500/30' },
+  cascades: { label: 'Cascades', icon: '🟣', accent: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
 };
 
 const ControlPanel: React.FC<ControlPanelProps> = ({
@@ -53,8 +52,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
             : 'bg-slate-800 text-slate-500 border-slate-700 hover:text-slate-300'
           }`}
       >
-        <BarChart3 size={14} />
-        Density
+        📊 Density
       </button>
     </div>
   );

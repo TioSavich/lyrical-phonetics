@@ -552,6 +552,63 @@ body {
   flex-shrink: 0;
 }
 
+/* ── Analysis View (tabbed) ── */
+.analysis-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: var(--bg-primary);
+}
+
+.analysis-controls {
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  flex-shrink: 0;
+}
+
+.analysis-tabs {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.75rem 1.25rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  flex-shrink: 0;
+  overflow-x: auto;
+}
+
+.analysis-tab {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font: 600 0.8rem 'Inter', sans-serif;
+  letter-spacing: 0.02em;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  cursor: pointer;
+  transition: var(--transition);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.analysis-tab:hover {
+  color: var(--text-primary);
+  background: var(--bg-surface);
+}
+
+.analysis-tab.active {
+  color: var(--accent-secondary);
+  border-bottom-color: var(--accent-primary);
+  background: var(--bg-surface);
+}
+
+.analysis-shell > :not(.analysis-tabs) {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .notepad-container { padding: 1rem; }
