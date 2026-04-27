@@ -207,10 +207,19 @@ const MeterPanel: React.FC<{ meter: DeviceAnalysis['meter'] }> = ({ meter }) => 
                 borderRadius: 4,
                 background: 'rgba(255,255,255,0.04)',
                 color: 'var(--text-secondary)',
+                whiteSpace: 'nowrap',
               }}
-              title={meter.style === 'accentual' ? `stress: ${l.stressPattern.join('')}` : ''}
+              title={meter.style === 'accentual'
+                ? `stress: ${l.stressPattern.join('')}`
+                : (l.clauses ? `clauses: ${l.clauses.join(' · ')}` : '')}
             >
-              <strong style={{ color: 'var(--text-primary)' }}>{l.lineId + 1}</strong>·{l.syllableCount}σ · {l.foot}
+              <strong style={{ color: 'var(--text-primary)' }}>{l.lineId + 1}</strong>·{l.syllableCount}σ
+              {l.clauses && l.clauses.length > 1 && (
+                <span style={{ color: 'var(--text-muted)', marginLeft: 4 }}>
+                  ({l.clauses.join('+')})
+                </span>
+              )}
+              <span style={{ marginLeft: 4 }}>· {l.foot}</span>
             </span>
           ))}
           {nonEmpty.length > 24 && <span style={metaStyle}>+{nonEmpty.length - 24} more</span>}

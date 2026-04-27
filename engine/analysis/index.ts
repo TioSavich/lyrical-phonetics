@@ -24,6 +24,7 @@ import { computeSyllableSymmetry } from './symmetry';
 import { computeRegularity } from './regularity';
 import { buildHotWordSuggestions, buildCascadeSuggestions } from './suggestions';
 import { computePatterns } from './patterns';
+import { findRoots } from './roots';
 
 export function analyzeFull(text: string, language: Language): AnalysisResult {
   const { lines, words } = tokenize(text, language);
@@ -64,6 +65,7 @@ export function analyzeFull(text: string, language: Language): AnalysisResult {
   );
 
   const { phoneme_vectors, patterns } = computePatterns(words);
+  const roots = findRoots(words, language);
 
   return {
     lines,
@@ -80,5 +82,6 @@ export function analyzeFull(text: string, language: Language): AnalysisResult {
     cascade_suggestions,
     phoneme_vectors,
     patterns,
+    roots,
   };
 }

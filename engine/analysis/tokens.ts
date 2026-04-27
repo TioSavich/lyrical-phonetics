@@ -1,6 +1,7 @@
 import type { Language, Pronunciation } from '../languages/Language';
 import type { LineData, WordToken } from '../../types';
 import { isVowel, bareSymbol } from '../phonemes/ipa';
+import { presplitProse } from './presplit';
 
 /**
  * One indexed word with full phonetic context. The groupers (rhyme,
@@ -112,19 +113,6 @@ function buildIndexedWord(
     lastStressedVowelIdx,
     initials,
   };
-}
-
-/**
- * If the text has no newlines but does have sentence terminators, treat it
- * as prose and split on sentence boundaries. Without this, the entire
- * paragraph becomes one virtual "line" and per-line stats (sections,
- * anaphora, regularity, syllable_symmetry) all degenerate to zero.
- */
-function presplitProse(text: string): string {
-  if (text.includes('\n')) return text;
-  // Insert a newline after sentence terminators followed by whitespace.
-  // Keep the terminator on the preceding line.
-  return text.replace(/([.!?…])(\s+)/g, '$1\n');
 }
 
 export function tokenize(text: string, language: Language): Tokenized {

@@ -22,11 +22,13 @@ function stripHtml(s: string): string {
   return s.replace(/<[^>]*>/g, '').replace(/&[a-z]+;/gi, ' ').replace(/\s+/g, ' ').trim();
 }
 
-function endpoint(lang: LanguageCode, word: string): string {
-  // Wiktionary's REST endpoint URI-encodes special chars itself, but we
-  // still encode for safety. Page titles preserve case in some cases — we
-  // try lowercase first since most lemmas are lowercased.
-  return `https://${lang}.wiktionary.org/api/rest_v1/page/definition/${encodeURIComponent(word)}`;
+function endpoint(_lang: LanguageCode, word: string): string {
+  // Always hit en.wiktionary.org. The /page/definition/ endpoint is only
+  // enabled on the English wiki; fr.wiktionary.org returns 501 for every
+  // word. The English wiki happens to contain entries (and structured
+  // sense data) for every language as separately-keyed sections, so this
+  // is strictly an upgrade.
+  return `https://en.wiktionary.org/api/rest_v1/page/definition/${encodeURIComponent(word)}`;
 }
 
 async function fetchSenses(lang: LanguageCode, word: string): Promise<SemanticSense[]> {

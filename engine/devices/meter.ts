@@ -12,7 +12,8 @@
  * (alexandrin)", which is what's useful for deterministic analysis.
  */
 
-import type { Language, LineToken } from '../languages/Language';
+import type { Language } from '../languages/Language';
+import { presplitProse } from '../analysis/presplit';
 
 export type LineMeter = {
   lineId: number;
@@ -21,6 +22,12 @@ export type LineMeter = {
   stressPattern: number[];
   /** Foot label, e.g. "iambic", "trochaic", "syllabic-12". */
   foot: string;
+  /**
+   * Syllable count per comma/semicolon/colon-delimited clause within the
+   * line. For oratorical prose this is where the actual rhythm lives —
+   * the line-total is a near-meaningless number.
+   */
+  clauses?: number[];
 };
 
 export type MeterReport = {
@@ -76,8 +83,25 @@ function classifyAccentual(stress: number[]): string {
  * line is one syllable short of a target — but that's beyond MVP. We just
  * count syllables as the number of vowels in each word's pronunciation.
  */
+function syllablesOfText(text: string, language: Language): { count: number; stress: number[] } {
+  // Re-tokenize a fragment so clause-level counts use the same G2P pass.
+  const subLines = language.tokenize(text);
+  let count = 0;
+  const stress: number[] = [];
+  for (const line of subLines) {
+    for (const w of line.words) {
+      if (!w.clean) continue;
+      const pron = language.lookup(w.clean);
+      if (!pron) continue;
+      count += pron.syllables.length;
+      for (const s of pron.stress) stress.push(s);
+    }
+  }
+  return { count, stress };
+}
+
 export function analyzeMeter(text: string, language: Language): MeterReport {
-  const lines = language.tokenize(text);
+  const lines = language.tokenize(presplitProse(text));
   const lineMeters: LineMeter[] = [];
 
   for (const line of lines) {
@@ -86,33 +110,36 @@ export function analyzeMeter(text: string, language: Language): MeterReport {
       continue;
     }
 
-    let syllableCount = 0;
-    const stressPattern: number[] = [];
-    for (const w of line.words) {
-      if (!w.clean) continue;
-      const pron = language.lookup(w.clean);
-      if (!pron) continue;
-      syllableCount += pron.syllables.length;
-      for (const s of pron.stress) stressPattern.push(s);
-    }
+    const { count: syllableCount, stress: stressPattern } = syllablesOfText(line.text, language);
+
+    // Clause split: comma, semicolon, colon, em-dash, en-dash.
+    const clauseTexts = line.text
+      .split(/[,;:—–]/)
+      .map((c) => c.trim())
+      .filter((c) => c.length > 0);
+    const clauses = clauseTexts.length > 1
+      ? clauseTexts.map((ct) => syllablesOfText(ct, language).count)
+      : undefined;
 
     if (language.meterStyle === 'syllabic') {
-      const name = SYLLABIC_NAMES[syllableCount] ?? `${syllableCount}-syllable`;
+      const name = SYLLABIC_NAMES[syllableCount] ?? (clauses ? 'prose' : `${syllableCount}-syllable`);
       lineMeters.push({
         lineId: line.id,
         syllableCount,
         stressPattern: [],
         foot: name,
+        clauses,
       });
     } else {
       const foot = classifyAccentual(stressPattern);
-      const feetCount = Math.floor(stressPattern.length / 2); // rough
-      const meterName = ACCENTUAL_NAMES[feetCount] ?? `${feetCount}-feet`;
+      const feetCount = Math.floor(stressPattern.length / 2);
+      const meterName = ACCENTUAL_NAMES[feetCount] ?? (clauses ? 'prose' : `${feetCount}-feet`);
       lineMeters.push({
         lineId: line.id,
         syllableCount,
         stressPattern,
         foot: foot === 'mixed' ? 'mixed' : `${foot} ${meterName}`,
+        clauses,
       });
     }
   }

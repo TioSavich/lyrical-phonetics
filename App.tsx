@@ -11,6 +11,7 @@ import ManuscriptView from './components/ManuscriptView';
 import XRayView from './components/XRayView';
 import WorkshopView from './components/WorkshopView';
 import ControlPanel from './components/ControlPanel';
+import RootsView from './components/RootsView';
 
 // ── Types ──
 
@@ -90,7 +91,7 @@ const App: React.FC = () => {
   const [analysisText, setAnalysisText] = useState<string>('');
   const [analyzing, setAnalyzing] = useState(false);
   const [loadingSenses, setLoadingSenses] = useState(false);
-  const [analysisTab, setAnalysisTab] = useState<'manuscript' | 'xray' | 'workshop' | 'devices'>('manuscript');
+  const [analysisTab, setAnalysisTab] = useState<'manuscript' | 'xray' | 'workshop' | 'roots' | 'devices'>('manuscript');
   const [activeResultDevices, setActiveResultDevices] = useState<Set<ResultDeviceType>>(
     new Set(['rhymes', 'assonance', 'alliteration', 'cascades'])
   );
@@ -606,6 +607,7 @@ const App: React.FC = () => {
               ['manuscript', '📜 Manuscript'],
               ['xray', '📊 X-Ray'],
               ['workshop', '🛠 Workshop'],
+              ['roots', '🌱 Roots'],
               ['devices', '🔬 Devices'],
             ] as const).map(([key, label]) => (
               <button
@@ -636,6 +638,9 @@ const App: React.FC = () => {
           )}
           {analysisTab === 'workshop' && fullAnalysis && (
             <WorkshopView data={fullAnalysis} />
+          )}
+          {analysisTab === 'roots' && fullAnalysis && (
+            <RootsView data={fullAnalysis} />
           )}
         </div>
       )}

@@ -136,6 +136,16 @@ export interface CascadeSuggestion {
   suggestions: CascadeExpansionSuggestion[];
 }
 
+// ── Roots / Lemma Recurrence ──
+
+export interface RootGroup {
+  id: string;
+  stem: string;
+  count: number;
+  surfaces: string[];
+  words: { lineIndex: number; wordIndex: number; surface: string }[];
+}
+
 // ── Full Analysis Result ──
 
 export interface AnalysisResult {
@@ -157,6 +167,8 @@ export interface AnalysisResult {
   syllable_symmetry?: SyllableMismatch[];
   suggestions?: HotWordSuggestion[];
   cascade_suggestions?: CascadeSuggestion[];
+  // Phase 5
+  roots?: RootGroup[];
 }
 
 // ── UI State ──
